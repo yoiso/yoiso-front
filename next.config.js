@@ -3,5 +3,9 @@ const withCSS = require('@zeit/next-css');
 const withFonts = require('next-fonts');
 
 module.exports = withCSS(
-  withFonts(),
+  withFonts({
+    serverRuntimeConfig: {
+      API_URL: 'process.env.API_URL'
+    }
+  }),
 );

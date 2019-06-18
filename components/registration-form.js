@@ -1,19 +1,23 @@
 import axios from 'axios';
-import 'pivotal-ui/css/positioning';
+import 'yokui/css/positioning';
+import { ErrorAlert } from 'yokui/react/alerts';
 import { Form } from 'yokui/react/forms';
 import { Input } from 'yokui/react/inputs';
 import { PrimaryButton } from 'yokui/react/buttons';
 import { FlexCol, Grid } from 'yokui/react/flex-grids';
 
-export default () => {
+const RegistrationForm = () => {
+  let showAlert = false;
+
   return (
     <Form {...{
-      onSubmit: ({initial, current}) => {
-        console.log(initial);
-        console.log(current);
-        axios.post('https://webapi.com', current)
+      onSubmit: (data) => {
+        return axios.post(process.env.API_URL + '/users', data.current)
           .then((result) => {
             console.log(result);
+          })
+          .catch((error) => {
+            showAlert = true;
           });
       },
       fields: {
@@ -31,12 +35,14 @@ export default () => {
         }
       }
     }}>
-      {({fields}) => {
+      {({fields, state}) => {
         return (
           <div>
             <Grid>
               <FlexCol />
               <FlexCol>
+                <ErrorAlert withIcon show={showAlert}>Pendaftaran gagal. Periksa lagi.</ErrorAlert>
+
                 {fields.name}
                 {fields.email}
                 {fields.password}
@@ -55,3 +61,5 @@ export default () => {
     </Form>
   )
 }
+
+export default RegistrationForm;

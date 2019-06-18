@@ -165,16 +165,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var pivotal_ui_css_positioning__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pivotal-ui/css/positioning */ "pivotal-ui/css/positioning");
-/* harmony import */ var pivotal_ui_css_positioning__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(pivotal_ui_css_positioning__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! yokui/react/forms */ "yokui/react/forms");
-/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(yokui_react_forms__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! yokui/react/inputs */ "yokui/react/inputs");
-/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! yokui/react/buttons */ "yokui/react/buttons");
-/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! yokui/react/flex-grids */ "yokui/react/flex-grids");
-/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var yokui_css_positioning__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! yokui/css/positioning */ "yokui/css/positioning");
+/* harmony import */ var yokui_css_positioning__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(yokui_css_positioning__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var yokui_react_alerts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! yokui/react/alerts */ "yokui/react/alerts");
+/* harmony import */ var yokui_react_alerts__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! yokui/react/forms */ "yokui/react/forms");
+/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(yokui_react_forms__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! yokui/react/inputs */ "yokui/react/inputs");
+/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! yokui/react/buttons */ "yokui/react/buttons");
+/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! yokui/react/flex-grids */ "yokui/react/flex-grids");
+/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8__);
 
 var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-form.js";
 
@@ -184,35 +186,24 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-f
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_forms__WEBPACK_IMPORTED_MODULE_4__["Form"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    onSubmit: function onSubmit(_ref) {
-      var initial = _ref.initial,
-          current = _ref.current;
-      console.log(initial);
-      console.log(current);
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://webapi.com', current).then(function (result) {
+
+
+var RegistrationForm = function RegistrationForm() {
+  var showAlert = false;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_forms__WEBPACK_IMPORTED_MODULE_5__["Form"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    onSubmit: function onSubmit(data) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("http://localhost:3030/users", data.current).then(function (result) {
         console.log(result);
+      }).catch(function (error) {
+        showAlert = true;
       });
     },
     fields: {
       name: {
         label: 'Nama Lengkap',
-        children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_5__["Input"], {
+        children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_6__["Input"], {
           type: "text",
           placeholder: "Sesuai identitas diri",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 22
-          },
-          __self: this
-        })
-      },
-      email: {
-        label: 'Email',
-        children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_5__["Input"], {
-          type: "email",
-          placeholder: "Email untuk verifikasi",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 26
@@ -220,14 +211,26 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-f
           __self: this
         })
       },
+      email: {
+        label: 'Email',
+        children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_6__["Input"], {
+          type: "email",
+          placeholder: "Email untuk verifikasi",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        })
+      },
       password: {
         label: 'Password',
-        children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_5__["Input"], {
+        children: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_6__["Input"], {
           type: "password",
           placeholder: "Minimal 6 karakter",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 34
           },
           __self: this
         })
@@ -236,59 +239,70 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-f
   }, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 13
     },
     __self: this
-  }), function (_ref2) {
-    var fields = _ref2.fields;
+  }), function (_ref) {
+    var fields = _ref.fields,
+        state = _ref.state;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 40
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7__["Grid"], {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8__["Grid"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 41
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7__["FlexCol"], {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8__["FlexCol"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 42
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7__["FlexCol"], {
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8__["FlexCol"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 43
       },
       __self: this
-    }, fields.name, fields.email, fields.password, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      class: "float-right",
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_4__["ErrorAlert"], {
+      withIcon: true,
+      show: showAlert,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 44
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_6__["PrimaryButton"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      type: 'submit'
-    }, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    }), "Daftar"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_7__["FlexCol"], {
+    }, "Pendaftaran gagal. Periksa lagi."), fields.name, fields.email, fields.password, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      class: "float-right",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 50
       },
       __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_7__["PrimaryButton"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      type: 'submit'
+    }, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }), "Daftar"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_8__["FlexCol"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: this
     })));
   });
-});
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RegistrationForm);
 
 /***/ }),
 
@@ -1169,17 +1183,6 @@ module.exports = require("next/head");
 
 /***/ }),
 
-/***/ "pivotal-ui/css/positioning":
-/*!*********************************************!*\
-  !*** external "pivotal-ui/css/positioning" ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("pivotal-ui/css/positioning");
-
-/***/ }),
-
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -1188,6 +1191,28 @@ module.exports = require("pivotal-ui/css/positioning");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "yokui/css/positioning":
+/*!****************************************!*\
+  !*** external "yokui/css/positioning" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("yokui/css/positioning");
+
+/***/ }),
+
+/***/ "yokui/react/alerts":
+/*!*************************************!*\
+  !*** external "yokui/react/alerts" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("yokui/react/alerts");
 
 /***/ }),
 
