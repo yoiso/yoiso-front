@@ -6,19 +6,35 @@ import { Input } from 'yokui/react/inputs';
 import { PrimaryButton } from 'yokui/react/buttons';
 import { FlexCol, Grid } from 'yokui/react/flex-grids';
 
-const RegistrationForm = () => {
-  let showAlert = false;
+const RegistrationForm = (props) => {
 
   return (
     <Form {...{
-      onSubmit: (data) => {
-        return axios.post(process.env.API_URL + '/users', data.current)
-          .then((result) => {
-            console.log(result);
-          })
-          .catch((error) => {
-            showAlert = true;
-          });
+      onSubmit: async ({initial, current}) => {
+        try {
+          const response = await axios.post(process.env.API_URL + '/users', current);
+        } catch(error) {
+          throw error.response;
+        }
+      },
+      onSubmitError: (error) => {
+        const { message } = error.data;
+        const errorField = {};
+
+        message.forEach((element) => {
+          if (element.property == 'name') {
+            errorField['name'] = element.constraints.length;
+          }
+
+          if (element.property == 'email') {
+            errorField['email'] = element.constraints.isEmail;
+          }
+
+          if (element.property == 'password') {
+            errorField['password'] = element.constraints.length;
+          }
+        });
+        return errorField;
       },
       fields: {
         name: {
@@ -36,6 +52,13 @@ const RegistrationForm = () => {
       }
     }}>
       {({fields, state}) => {
+        const { errors } = state;
+
+        let showAlert = false;
+        if (Object.keys(errors).length > 0) {
+          showAlert = true;
+        }
+
         return (
           <div>
             <Grid>
@@ -47,7 +70,7 @@ const RegistrationForm = () => {
                 {fields.email}
                 {fields.password}
 
-                <div class='float-right'>
+                <div className='float-right'>
                   <PrimaryButton {...{
                     type: 'submit',
                   }}>Daftar</PrimaryButton>
