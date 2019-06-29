@@ -1,9 +1,9 @@
-webpackHotUpdate("static/development/pages/register.js",{
+webpackHotUpdate("static/development/pages/login.js",{
 
-/***/ "./components/registration-form.js":
-/*!*****************************************!*\
-  !*** ./components/registration-form.js ***!
-  \*****************************************/
+/***/ "./components/login-form.js":
+/*!**********************************!*\
+  !*** ./components/login-form.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-form.js";
+var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/login-form.js";
 
 
 
@@ -45,7 +45,7 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-f
 
 
 
-var RegistrationForm = function RegistrationForm(props) {
+var LoginForm = function LoginForm(props) {
   return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__["Form"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     onSubmit: function () {
       var _onSubmit = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(
@@ -58,25 +58,31 @@ var RegistrationForm = function RegistrationForm(props) {
               case 0:
                 initial = _ref.initial, current = _ref.current;
                 _context.prev = 1;
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.post("http://localhost:3030/users", current);
+                current.username = current.email;
+                current.grant_type = 'password';
+                current.client_id = 'client1';
+                current.client_secret = 'secret';
+                delete current.email;
+                _context.next = 9;
+                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.post("https://yoiso.id-anime.net/v1/token", current);
 
-              case 4:
+              case 9:
                 response = _context.sent;
-                _context.next = 10;
+                console.log(response);
+                _context.next = 16;
                 break;
 
-              case 7:
-                _context.prev = 7;
+              case 13:
+                _context.prev = 13;
                 _context.t0 = _context["catch"](1);
                 throw _context.t0.response;
 
-              case 10:
+              case 16:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[1, 7]]);
+        }, _callee, null, [[1, 13]]);
       }));
 
       function onSubmit(_x) {
@@ -104,18 +110,6 @@ var RegistrationForm = function RegistrationForm(props) {
       return errorField;
     },
     fields: {
-      name: {
-        label: 'Nama Lengkap',
-        children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-          type: "text",
-          placeholder: "Sesuai identitas diri",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42
-          },
-          __self: this
-        })
-      },
       email: {
         label: 'Email',
         children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
@@ -123,7 +117,7 @@ var RegistrationForm = function RegistrationForm(props) {
           placeholder: "Email untuk verifikasi",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 50
           },
           __self: this
         })
@@ -135,7 +129,7 @@ var RegistrationForm = function RegistrationForm(props) {
           placeholder: "Minimal 6 karakter",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 54
           },
           __self: this
         })
@@ -160,25 +154,25 @@ var RegistrationForm = function RegistrationForm(props) {
     return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 67
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 68
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 69
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 70
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__["ErrorAlert"], {
@@ -186,14 +180,14 @@ var RegistrationForm = function RegistrationForm(props) {
       show: showAlert,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 71
       },
       __self: this
-    }, "Pendaftaran gagal. Periksa lagi."), fields.name, fields.email, fields.password, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+    }, "Pendaftaran gagal. Periksa lagi."), fields.email, fields.password, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
       className: "float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 76
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__["PrimaryButton"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -201,22 +195,22 @@ var RegistrationForm = function RegistrationForm(props) {
     }, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 77
       },
       __self: this
-    }), "Daftar"))), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
+    }), "Masuk"))), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 82
       },
       __self: this
     })));
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (RegistrationForm);
+/* harmony default export */ __webpack_exports__["default"] = (LoginForm);
 
 /***/ })
 
 })
-//# sourceMappingURL=register.js.7026dc5303a8113b3f2b.hot-update.js.map
+//# sourceMappingURL=login.js.d3bf74a7fac5b4d5215b.hot-update.js.map

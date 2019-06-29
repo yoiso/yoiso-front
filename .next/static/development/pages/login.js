@@ -1,4 +1,217 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/register.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/login.js"],{
+
+/***/ "./components/login-form.js":
+/*!**********************************!*\
+  !*** ./components/login-form.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var yokui_css_positioning__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! yokui/css/positioning */ "./node_modules/yokui/css/positioning/index.js");
+/* harmony import */ var yokui_css_positioning__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(yokui_css_positioning__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! yokui/react/alerts */ "./node_modules/yokui/react/alerts/index.js");
+/* harmony import */ var yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! yokui/react/forms */ "./node_modules/yokui/react/forms/index.js");
+/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! yokui/react/inputs */ "./node_modules/yokui/react/inputs/index.js");
+/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! yokui/react/buttons */ "./node_modules/yokui/react/buttons/index.js");
+/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! yokui/react/flex-grids */ "./node_modules/yokui/react/flex-grids/index.js");
+/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__);
+
+
+
+
+var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/login-form.js";
+
+
+
+
+
+
+
+
+
+var LoginForm = function LoginForm(props) {
+  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__["Form"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    onSubmit: function () {
+      var _onSubmit = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee(_ref) {
+        var initial, current, response;
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                initial = _ref.initial, current = _ref.current;
+                _context.prev = 1;
+                current.username = current.email;
+                current.grant_type = 'password';
+                current.client_id = 'client1';
+                current.client_secret = 'secret';
+                delete current.email;
+                _context.next = 9;
+                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.post("https://yoiso.id-anime.net/v1/token", current);
+
+              case 9:
+                response = _context.sent;
+                document.cookie = "access_token=".concat(response.data.token);
+                alert(document.cookie);
+                _context.next = 17;
+                break;
+
+              case 14:
+                _context.prev = 14;
+                _context.t0 = _context["catch"](1);
+                throw _context.t0.response;
+
+              case 17:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 14]]);
+      }));
+
+      function onSubmit(_x) {
+        return _onSubmit.apply(this, arguments);
+      }
+
+      return onSubmit;
+    }(),
+    onSubmitError: function onSubmitError(error) {
+      var message = error.data.message;
+      var errorField = {};
+      message.forEach(function (element) {
+        if (element.property == 'name') {
+          errorField['name'] = element.constraints.length;
+        }
+
+        if (element.property == 'email') {
+          errorField['email'] = element.constraints.isEmail;
+        }
+
+        if (element.property == 'password') {
+          errorField['password'] = element.constraints.length;
+        }
+      });
+      return errorField;
+    },
+    fields: {
+      email: {
+        label: 'Email',
+        children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
+          type: "email",
+          placeholder: "Email untuk verifikasi",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          },
+          __self: this
+        })
+      },
+      password: {
+        label: 'Password',
+        children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
+          type: "password",
+          placeholder: "Minimal 6 karakter",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55
+          },
+          __self: this
+        })
+      }
+    }
+  }, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }), function (_ref2) {
+    var fields = _ref2.fields,
+        state = _ref2.state;
+    var errors = state.errors;
+    var showAlert = false;
+
+    if (_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1___default()(errors).length > 0) {
+      showAlert = true;
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__["ErrorAlert"], {
+      withIcon: true,
+      show: showAlert,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }, "Pendaftaran gagal. Periksa lagi."), fields.email, fields.password, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
+      className: "float-right",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__["PrimaryButton"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      type: 'submit'
+    }, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 78
+      },
+      __self: this
+    }), "Masuk"))), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: this
+    })));
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoginForm);
+
+/***/ }),
 
 /***/ "./components/meta.js":
 /*!****************************!*\
@@ -55,224 +268,6 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/meta.js";
     __self: this
   }, "*{box-sizing:border-box;margin:0;padding:0;}body{background:#e5eef4;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2R3aS9rZXJqYS95dXNvLWZyb250My9teW5leHQvY29tcG9uZW50cy9tZXRhLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVF1QixBQUVnQyxBQUdKLG1CQUNyQixHQUptQyxTQUFXLFVBQUMiLCJmaWxlIjoiL2hvbWUvZHdpL2tlcmphL3l1c28tZnJvbnQzL215bmV4dC9jb21wb25lbnRzL21ldGEuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnO1xuXG5leHBvcnQgZGVmYXVsdCAoKSA9PiAoXG4gIDxkaXY+XG4gICAgPEhlYWQ+XG4gICAgICA8bWV0YSBuYW1lPVwidmlld3BvcnRcIiBjb250ZW50PVwid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTFcIiAvPlxuICAgICAgPG1ldGEgY2hhclNldD1cInV0Zi04XCIgLz5cbiAgICA8L0hlYWQ+XG4gICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICogeyBib3gtc2l6aW5nOiBib3JkZXItYm94OyBtYXJnaW46IDA7IHBhZGRpbmc6IDAgfVxuXG4gICAgICBib2R5IHtcbiAgICAgICAgYmFja2dyb3VuZDogI2U1ZWVmNDtcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvZGl2PlxuKVxuIl19 */\n/*@ sourceURL=/home/dwi/kerja/yuso-front3/mynext/components/meta.js */"));
 });
-
-/***/ }),
-
-/***/ "./components/registration-form.js":
-/*!*****************************************!*\
-  !*** ./components/registration-form.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var yokui_css_positioning__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! yokui/css/positioning */ "./node_modules/yokui/css/positioning/index.js");
-/* harmony import */ var yokui_css_positioning__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(yokui_css_positioning__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! yokui/react/alerts */ "./node_modules/yokui/react/alerts/index.js");
-/* harmony import */ var yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! yokui/react/forms */ "./node_modules/yokui/react/forms/index.js");
-/* harmony import */ var yokui_react_forms__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! yokui/react/inputs */ "./node_modules/yokui/react/inputs/index.js");
-/* harmony import */ var yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! yokui/react/buttons */ "./node_modules/yokui/react/buttons/index.js");
-/* harmony import */ var yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! yokui/react/flex-grids */ "./node_modules/yokui/react/flex-grids/index.js");
-/* harmony import */ var yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__);
-
-
-
-
-var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/components/registration-form.js";
-
-
-
-
-
-
-
-
-
-var RegistrationForm = function RegistrationForm(props) {
-  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_forms__WEBPACK_IMPORTED_MODULE_8__["Form"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    onSubmit: function () {
-      var _onSubmit = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(
-      /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee(_ref) {
-        var initial, current, response;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                initial = _ref.initial, current = _ref.current;
-                _context.prev = 1;
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_5___default.a.post("http://localhost:3030/users", current);
-
-              case 4:
-                response = _context.sent;
-                _context.next = 10;
-                break;
-
-              case 7:
-                _context.prev = 7;
-                _context.t0 = _context["catch"](1);
-                throw _context.t0.response;
-
-              case 10:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, null, [[1, 7]]);
-      }));
-
-      function onSubmit(_x) {
-        return _onSubmit.apply(this, arguments);
-      }
-
-      return onSubmit;
-    }(),
-    onSubmitError: function onSubmitError(error) {
-      var message = error.data.message;
-      var errorField = {};
-      message.forEach(function (element) {
-        if (element.property == 'name') {
-          errorField['name'] = element.constraints.length;
-        }
-
-        if (element.property == 'email') {
-          errorField['email'] = element.constraints.isEmail;
-        }
-
-        if (element.property == 'password') {
-          errorField['password'] = element.constraints.length;
-        }
-      });
-      return errorField;
-    },
-    fields: {
-      name: {
-        label: 'Nama Lengkap',
-        children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-          type: "text",
-          placeholder: "Sesuai identitas diri",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42
-          },
-          __self: this
-        })
-      },
-      email: {
-        label: 'Email',
-        children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-          type: "email",
-          placeholder: "Email untuk verifikasi",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 46
-          },
-          __self: this
-        })
-      },
-      password: {
-        label: 'Password',
-        children: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_inputs__WEBPACK_IMPORTED_MODULE_9__["Input"], {
-          type: "password",
-          placeholder: "Minimal 6 karakter",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          },
-          __self: this
-        })
-      }
-    }
-  }, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }), function (_ref2) {
-    var fields = _ref2.fields,
-        state = _ref2.state;
-    var errors = state.errors;
-    var showAlert = false;
-
-    if (_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_1___default()(errors).length > 0) {
-      showAlert = true;
-    }
-
-    return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["Grid"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_alerts__WEBPACK_IMPORTED_MODULE_7__["ErrorAlert"], {
-      withIcon: true,
-      show: showAlert,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
-    }, "Pendaftaran gagal. Periksa lagi."), fields.name, fields.email, fields.password, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
-      className: "float-right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_buttons__WEBPACK_IMPORTED_MODULE_10__["PrimaryButton"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      type: 'submit'
-    }, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    }), "Daftar"))), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(yokui_react_flex_grids__WEBPACK_IMPORTED_MODULE_11__["FlexCol"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79
-      },
-      __self: this
-    })));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (RegistrationForm);
 
 /***/ }),
 
@@ -8489,21 +8484,21 @@ exports.default = withSideEffect;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fregister&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Fregister.js!./":
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fregister&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Fregister.js ***!
-  \***************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Flogin.js!./":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Flogin.js ***!
+  \*********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/register", function() {
-      var page = __webpack_require__(/*! ./pages/register.js */ "./pages/register.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/login", function() {
+      var page = __webpack_require__(/*! ./pages/login.js */ "./pages/login.js")
       if(true) {
-        module.hot.accept(/*! ./pages/register.js */ "./pages/register.js", function() {
-          if(!next.router.components["/register"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/register.js */ "./pages/register.js")
-          next.router.update("/register", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/login.js */ "./pages/login.js", function() {
+          if(!next.router.components["/login"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/login.js */ "./pages/login.js")
+          next.router.update("/login", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -11105,9 +11100,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -11121,7 +11116,7 @@ function (_React$PureComponent) {
 
     _this = _React$PureComponent.call(this, props, context) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "handleAlertDismiss", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleAlertDismiss", function () {
       var onDismiss = _this.props.onDismiss;
       if (_this.props.onDismiss) onDismiss();
 
@@ -11153,18 +11148,18 @@ function (_React$PureComponent) {
 
     var props = (0, _helpers.mergeProps)(others, {
       role: 'alert',
-      className: (0, _classnames["default"])('pui-alert', "pui-alert-" + kind, {
+      className: (0, _classnames.default)('pui-alert', "pui-alert-" + kind, {
         'pui-alert-dismissable': dismissable
       })
     });
     var visible = typeof show === 'undefined' ? this.state.alertVisible : show;
-    if (!visible) return _react["default"].createElement("span", null);
+    if (!visible) return _react.default.createElement("span", null);
     var iconColumn;
 
     if (withIcon) {
-      iconColumn = _react["default"].createElement("div", {
+      iconColumn = _react.default.createElement("div", {
         className: "col col-fixed col-middle pan"
-      }, _react["default"].createElement(_iconography.Icon, {
+      }, _react.default.createElement(_iconography.Icon, {
         src: alertIcon
       }));
     }
@@ -11172,41 +11167,41 @@ function (_React$PureComponent) {
     var dismissableColumn;
 
     if (dismissable) {
-      dismissableColumn = _react["default"].createElement("div", {
+      dismissableColumn = _react.default.createElement("div", {
         className: "col col-fixed col-middle pan"
-      }, _react["default"].createElement(_buttons.DefaultButton, {
+      }, _react.default.createElement(_buttons.DefaultButton, {
         className: 'pui-alert-close-btn',
         iconOnly: true,
         flat: true,
         'aria-label': closeLabel,
         onClick: this.handleAlertDismiss,
-        icon: _react["default"].createElement(_iconography.Icon, {
+        icon: _react.default.createElement(_iconography.Icon, {
           src: "close"
         })
       }));
     }
 
-    return _react["default"].createElement("div", props, _react["default"].createElement("div", {
+    return _react.default.createElement("div", props, _react.default.createElement("div", {
       className: "grid"
-    }, iconColumn, _react["default"].createElement("div", {
+    }, iconColumn, _react.default.createElement("div", {
       className: "col col-middle"
-    }, _react["default"].createElement("div", null, label && _react["default"].createElement("span", {
+    }, _react.default.createElement("div", null, label && _react.default.createElement("span", {
       className: "em-high"
     }, label, ": "), children)), dismissableColumn));
   };
 
   return Alert;
-}(_react["default"].PureComponent);
+}(_react.default.PureComponent);
 
 _defineProperty(Alert, "propTypes", {
-  alertIcon: _propTypes["default"].string,
-  closeLabel: _propTypes["default"].node,
-  dismissable: _propTypes["default"].bool,
-  kind: _propTypes["default"].oneOf(['success', 'danger', 'info', 'warning']),
-  label: _propTypes["default"].string,
-  onDismiss: _propTypes["default"].func,
-  show: _propTypes["default"].bool,
-  withIcon: _propTypes["default"].bool
+  alertIcon: _propTypes.default.string,
+  closeLabel: _propTypes.default.node,
+  dismissable: _propTypes.default.bool,
+  kind: _propTypes.default.oneOf(['success', 'danger', 'info', 'warning']),
+  label: _propTypes.default.string,
+  onDismiss: _propTypes.default.func,
+  show: _propTypes.default.bool,
+  withIcon: _propTypes.default.bool
 });
 
 _defineProperty(Alert, "defaultProps", {
@@ -11234,13 +11229,13 @@ var defAlert = function defAlert(props) {
     };
 
     _proto2.render = function render() {
-      return _react["default"].createElement(Alert, _extends({}, props, this.props));
+      return _react.default.createElement(Alert, _extends({}, props, this.props));
     };
 
     return _class;
-  }(_react["default"].Component), _defineProperty(_class, "propTypes", {
-    dismissable: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func]),
-    withIcon: _propTypes["default"].bool
+  }(_react.default.Component), _defineProperty(_class, "propTypes", {
+    dismissable: _propTypes.default.oneOfType([_propTypes.default.bool, _propTypes.default.func]),
+    withIcon: _propTypes.default.bool
   }), _temp;
 };
 
@@ -11316,9 +11311,9 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 
 var _themeContext = __webpack_require__(/*! ../theme-context */ "./node_modules/yokui/react/theme-context/index.js");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -11364,7 +11359,7 @@ function (_React$Component) {
     }
 
     var props = _extends({
-      className: (0, _classnames["default"])(className, 'pui-btn', "pui-btn--" + kind, {
+      className: (0, _classnames.default)(className, 'pui-btn', "pui-btn--" + kind, {
         'pui-btn--alt': alt,
         'pui-btn--flat': flat,
         'pui-btn--full': fullWidth,
@@ -11385,33 +11380,33 @@ function (_React$Component) {
       props = _extends({
         'aria-label': buttonText
       }, props);
-      btnChildren = _react["default"].createElement("span", null, children);
+      btnChildren = _react.default.createElement("span", null, children);
     }
 
-    var buttonContent = _react["default"].createElement(_react.Fragment, null, iconPosition === 'right' ? btnChildren : icon, iconPosition === 'right' ? icon : btnChildren);
+    var buttonContent = _react.default.createElement(_react.Fragment, null, iconPosition === 'right' ? btnChildren : icon, iconPosition === 'right' ? icon : btnChildren);
 
-    return this.props.href ? _react["default"].createElement("a", props, buttonContent) : _react["default"].createElement("button", _extends({
+    return this.props.href ? _react.default.createElement("a", props, buttonContent) : _react.default.createElement("button", _extends({
       type: "button"
     }, props), buttonContent);
   };
 
   return UIButton;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.UIButton = UIButton;
 
 _defineProperty(UIButton, "propTypes", {
-  alt: _propTypes["default"].bool,
-  flat: _propTypes["default"].bool,
-  fullWidth: _propTypes["default"].bool,
-  href: _propTypes["default"].string,
-  icon: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].object]),
-  iconPosition: _propTypes["default"].oneOf(['left', 'right']),
-  iconOnly: _propTypes["default"].bool,
-  kind: _propTypes["default"].oneOf(['default', 'danger', 'primary', 'brand']),
-  large: _propTypes["default"].bool,
-  onDark: _propTypes["default"].bool,
-  small: _propTypes["default"].bool
+  alt: _propTypes.default.bool,
+  flat: _propTypes.default.bool,
+  fullWidth: _propTypes.default.bool,
+  href: _propTypes.default.string,
+  icon: _propTypes.default.oneOfType([_propTypes.default.node, _propTypes.default.object]),
+  iconPosition: _propTypes.default.oneOf(['left', 'right']),
+  iconOnly: _propTypes.default.bool,
+  kind: _propTypes.default.oneOf(['default', 'danger', 'primary', 'brand']),
+  large: _propTypes.default.bool,
+  onDark: _propTypes.default.bool,
+  small: _propTypes.default.bool
 });
 
 _defineProperty(UIButton, "defaultProps", {
@@ -11421,8 +11416,8 @@ _defineProperty(UIButton, "defaultProps", {
 
 var defButton = function defButton(kind) {
   return function (props) {
-    return _react["default"].createElement(_themeContext.ThemeConsumer, null, function (theme) {
-      return _react["default"].createElement(UIButton, _extends({
+    return _react.default.createElement(_themeContext.ThemeConsumer, null, function (theme) {
+      return _react.default.createElement(UIButton, _extends({
         kind: kind,
         onDark: theme === 'dark'
       }, props));
@@ -11487,7 +11482,7 @@ var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/yokui/react
 
 var _classnames6 = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -11522,33 +11517,33 @@ function (_React$Component) {
         breakpoint = _this$props.breakpoint,
         other = _objectWithoutPropertiesLoose(_this$props, ["col", "fixed", "grow", "alignment", "contentAlignment", "breakpoint"]);
 
-    var colClassName = (0, _classnames6["default"])((_classnames = {}, _classnames["col-" + col] = col, _classnames));
-    var fixedClassName = (0, _classnames6["default"])({
+    var colClassName = (0, _classnames6.default)((_classnames = {}, _classnames["col-" + col] = col, _classnames));
+    var fixedClassName = (0, _classnames6.default)({
       'col-fixed': fixed
     });
-    var growClassName = (0, _classnames6["default"])((_classnames2 = {}, _classnames2["col-grow-" + grow] = grow, _classnames2));
-    var alignmentClassName = (0, _classnames6["default"])((_classnames3 = {}, _classnames3["col-align-" + alignment] = alignment, _classnames3));
-    var contentAlignmentClassName = (0, _classnames6["default"])((_classnames4 = {}, _classnames4["col-" + contentAlignment] = contentAlignment, _classnames4));
-    var breakpointClassName = (0, _classnames6["default"])((_classnames5 = {}, _classnames5["col-" + breakpoint] = breakpoint, _classnames5));
-    var className = (0, _classnames6["default"])('col', colClassName, fixedClassName, growClassName, alignmentClassName, contentAlignmentClassName, breakpointClassName);
+    var growClassName = (0, _classnames6.default)((_classnames2 = {}, _classnames2["col-grow-" + grow] = grow, _classnames2));
+    var alignmentClassName = (0, _classnames6.default)((_classnames3 = {}, _classnames3["col-align-" + alignment] = alignment, _classnames3));
+    var contentAlignmentClassName = (0, _classnames6.default)((_classnames4 = {}, _classnames4["col-" + contentAlignment] = contentAlignment, _classnames4));
+    var breakpointClassName = (0, _classnames6.default)((_classnames5 = {}, _classnames5["col-" + breakpoint] = breakpoint, _classnames5));
+    var className = (0, _classnames6.default)('col', colClassName, fixedClassName, growClassName, alignmentClassName, contentAlignmentClassName, breakpointClassName);
     var newProps = (0, _helpers.mergeProps)(other, {
       className: className
     });
-    return _react["default"].createElement("div", newProps);
+    return _react.default.createElement("div", newProps);
   };
 
   return FlexCol;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.FlexCol = FlexCol;
 
 _defineProperty(FlexCol, "propTypes", {
-  col: _propTypes["default"].number,
-  fixed: _propTypes["default"].bool,
-  grow: _propTypes["default"].number,
-  alignment: _propTypes["default"].oneOf(['top', 'middle', 'bottom']),
-  contentAlignment: _propTypes["default"].oneOf(['top', 'middle', 'bottom']),
-  breakpoint: _propTypes["default"].oneOf(['sm', 'md', 'lg'])
+  col: _propTypes.default.number,
+  fixed: _propTypes.default.bool,
+  grow: _propTypes.default.number,
+  alignment: _propTypes.default.oneOf(['top', 'middle', 'bottom']),
+  contentAlignment: _propTypes.default.oneOf(['top', 'middle', 'bottom']),
+  breakpoint: _propTypes.default.oneOf(['sm', 'md', 'lg'])
 });
 
 ;
@@ -11577,7 +11572,7 @@ var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/yokui/react
 
 var _classnames2 = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -11610,20 +11605,20 @@ function (_React$PureComponent) {
         props = _objectWithoutPropertiesLoose(_this$props, ["gutter", "justifyContent", "flexDirection"]);
 
     var newProps = (0, _helpers.mergeProps)(props, {
-      className: (0, _classnames2["default"])('grid', gutter ? '' : 'grid-nogutter', (_classnames = {}, _classnames["justify-content-" + justifyContent] = justifyContent, _classnames["flex-direction-" + flexDirection] = flexDirection, _classnames))
+      className: (0, _classnames2.default)('grid', gutter ? '' : 'grid-nogutter', (_classnames = {}, _classnames["justify-content-" + justifyContent] = justifyContent, _classnames["flex-direction-" + flexDirection] = flexDirection, _classnames))
     });
-    return _react["default"].createElement("div", newProps);
+    return _react.default.createElement("div", newProps);
   };
 
   return Grid;
-}(_react["default"].PureComponent);
+}(_react.default.PureComponent);
 
 exports.Grid = Grid;
 
 _defineProperty(Grid, "propTypes", {
-  gutter: _propTypes["default"].bool,
-  justifyContent: _propTypes["default"].oneOf(['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly']),
-  flexDirection: _propTypes["default"].oneOf(['row', 'row-reverse', 'column', 'column-reverse'])
+  gutter: _propTypes.default.bool,
+  justifyContent: _propTypes.default.oneOf(['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly']),
+  flexDirection: _propTypes.default.oneOf(['row', 'row-reverse', 'column', 'column-reverse'])
 });
 
 _defineProperty(Grid, "defaultProps", {
@@ -11688,13 +11683,13 @@ var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/yokui/react
 
 var _inputs = __webpack_require__(/*! ../inputs */ "./node_modules/yokui/react/inputs/index.js");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -11760,7 +11755,7 @@ function (_React$Component) {
 
     _this = _React$Component.call(this, _props) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "onChangeCheckbox", function (name, cb) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChangeCheckbox", function (name, cb) {
       return function (val) {
         var _extends2, _nextValue;
 
@@ -11776,11 +11771,11 @@ function (_React$Component) {
         if (cb) _this.setValues(nextValue, function () {
           return cb(val);
         });else _this.setValues(nextValue);
-        if (_this.props.onModified) _this.props.onModified(!(0, _deepEqual["default"])(initial, nextState.current));
+        if (_this.props.onModified) _this.props.onModified(!(0, _deepEqual.default)(initial, nextState.current));
       };
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (name, validator, cb) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (name, validator, cb) {
       return function (val) {
         var _extends3;
 
@@ -11800,11 +11795,11 @@ function (_React$Component) {
         if (cb) _this.setState(nextState, function () {
           return cb(val);
         });else _this.setState(nextState);
-        if (_this.props.onModified) _this.props.onModified(!(0, _deepEqual["default"])(initial, nextState.current));
+        if (_this.props.onModified) _this.props.onModified(!(0, _deepEqual.default)(initial, nextState.current));
       };
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onBlur", function (_ref2) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function (_ref2) {
       var name = _ref2.name,
           validator = _ref2.validator;
       return function (_ref3) {
@@ -11819,21 +11814,21 @@ function (_React$Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_this), "canReset", function () {
-      return !_this.state.submitting && !(0, _deepEqual["default"])(_this.state.initial, _this.state.current);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "canReset", function () {
+      return !_this.state.submitting && !(0, _deepEqual.default)(_this.state.initial, _this.state.current);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "reset", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "reset", function () {
       var initial = _this.state.initial;
       if (_this.props.onModified) _this.props.onModified(false);
 
       _this.setState({
-        current: (0, _lodash["default"])(initial),
+        current: (0, _lodash.default)(initial),
         errors: {}
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "canSubmit", function (_temp) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "canSubmit", function (_temp) {
       var _ref4 = _temp === void 0 ? {} : _temp,
           checkRequiredFields = _ref4.checkRequiredFields;
 
@@ -11843,7 +11838,7 @@ function (_React$Component) {
           current = _this$state2.current,
           submitting = _this$state2.submitting;
       var isDiffFromInitial = (0, _helpers.find)(Object.keys(initial), function (key) {
-        return !(0, _deepEqual["default"])(initial[key], current[key]);
+        return !(0, _deepEqual.default)(initial[key], current[key]);
       });
       var requiredFields = Object.keys(fields).filter(function (name) {
         return fields[name] && !isOptional(fields[name], current);
@@ -11866,7 +11861,7 @@ function (_React$Component) {
       return !submitting && isDiffFromInitial && (checkRequiredFields ? checkRequiredFields(current) : requiredFieldsHaveValue) && passesValidators;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onSubmit", function (e) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSubmit", function (e) {
       e && e.preventDefault();
       var _this$props = _this.props,
           onSubmit = _this$props.onSubmit,
@@ -11888,8 +11883,8 @@ function (_React$Component) {
 
       var onSuccess = function onSuccess(response) {
         _this.setState(_extends({}, nextState, {
-          current: resetOnSubmit ? (0, _lodash["default"])(initial) : current,
-          initial: resetOnSubmit ? initial : (0, _lodash["default"])(current),
+          current: resetOnSubmit ? (0, _lodash.default)(initial) : current,
+          initial: resetOnSubmit ? initial : (0, _lodash.default)(current),
           errors: {}
         }));
 
@@ -11918,7 +11913,7 @@ function (_React$Component) {
         });
 
         if (isPromise(afterSubmitPromise)) {
-          return afterSubmitPromise.then(onSuccess)["catch"](onError);
+          return afterSubmitPromise.then(onSuccess).catch(onError);
         } else {
           return onSuccess(afterSubmitPromise);
         }
@@ -11928,22 +11923,22 @@ function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "setValues", function (values, cb) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setValues", function (values, cb) {
       return _this.setState({
         current: _extends({}, _this.state.current, values)
       }, cb);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "controlField", function (_ref5) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "controlField", function (_ref5) {
       var _ref5$children = _ref5.children,
-          children = _ref5$children === void 0 ? _react["default"].createElement(_inputs.Input, {
+          children = _ref5$children === void 0 ? _react.default.createElement(_inputs.Input, {
         type: "text"
       }) : _ref5$children,
           validator = _ref5.validator,
           name = _ref5.name,
           ids = _ref5.ids;
 
-      var _assertThisInitialize = _assertThisInitialized(_this),
+      var _assertThisInitialize = _assertThisInitialized(_assertThisInitialized(_this)),
           canSubmit = _assertThisInitialize.canSubmit,
           canReset = _assertThisInitialize.canReset,
           reset = _assertThisInitialize.reset,
@@ -11965,7 +11960,7 @@ function (_React$Component) {
         setValues: setValues,
         state: state
       });
-      if (!element || _react["default"].Children.count(element) !== 1 || !name) return element;
+      if (!element || _react.default.Children.count(element) !== 1 || !name) return element;
       var props = {
         name: element.props.name || name
       };
@@ -11984,7 +11979,7 @@ function (_React$Component) {
         });
       }
 
-      return _react["default"].cloneElement(element, props);
+      return _react.default.cloneElement(element, props);
     });
 
     _this.state = newFormState(_props.fields, {}, function (_ref6) {
@@ -11992,7 +11987,7 @@ function (_React$Component) {
       initialValue = newInitialValue(initialValue);
       return {
         initialValue: initialValue,
-        currentValue: (0, _lodash["default"])(initialValue)
+        currentValue: (0, _lodash.default)(initialValue)
       };
     });
     return _this;
@@ -12018,7 +12013,7 @@ function (_React$Component) {
       initialValue = newInitialValue(initialValue);
       return {
         initialValue: initialValue,
-        currentValue: current.hasOwnProperty(name) ? current[name] === _this2.state.initial[name] ? (0, _lodash["default"])(initialValue) : current[name] : (0, _lodash["default"])(initialValue)
+        currentValue: current.hasOwnProperty(name) ? current[name] === _this2.state.initial[name] ? (0, _lodash.default)(initialValue) : current[name] : (0, _lodash.default)(initialValue)
       };
     }),
         newInitial = _newFormState.initial,
@@ -12075,7 +12070,7 @@ function (_React$Component) {
       var _ = props.className,
           rest = _objectWithoutPropertiesLoose(props, ["className"]);
 
-      formUnits[name] = _react["default"].createElement(_form_unit.FormUnit, _extends({}, rest, {
+      formUnits[name] = _react.default.createElement(_form_unit.FormUnit, _extends({}, rest, {
         key: name,
         optional: isOptional(rest, current),
         setValues: setValues,
@@ -12088,10 +12083,10 @@ function (_React$Component) {
       }));
     }
 
-    return _react["default"].createElement("form", _extends({}, others, {
-      className: (0, _classnames["default"])('form', className),
+    return _react.default.createElement("form", _extends({}, others, {
+      className: (0, _classnames.default)('form', className),
       onSubmit: this.onSubmit
-    }), _react["default"].createElement("fieldset", {
+    }), _react.default.createElement("fieldset", {
       disabled: submitting
     }, children({
       fields: formUnits,
@@ -12107,17 +12102,17 @@ function (_React$Component) {
   };
 
   return Form;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.Form = Form;
 
 _defineProperty(Form, "propTypes", {
-  afterSubmit: _propTypes["default"].func,
-  fields: _propTypes["default"].object,
-  onModified: _propTypes["default"].func,
-  onSubmit: _propTypes["default"].func,
-  onSubmitError: _propTypes["default"].func,
-  resetOnSubmit: _propTypes["default"].bool
+  afterSubmit: _propTypes.default.func,
+  fields: _propTypes.default.object,
+  onModified: _propTypes.default.func,
+  onSubmit: _propTypes.default.func,
+  onSubmitError: _propTypes.default.func,
+  resetOnSubmit: _propTypes.default.bool
 });
 
 _defineProperty(Form, "defaultProps", {
@@ -12158,11 +12153,11 @@ var _flexGrids = __webpack_require__(/*! ../flex-grids */ "./node_modules/yokui/
 
 var _classnames2 = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -12180,38 +12175,38 @@ function (_React$Component) {
 
     _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "newTooltipIcon", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "newTooltipIcon", function () {
       var _this$props = _this.props,
           tooltip = _this$props.tooltip,
           tooltipSize = _this$props.tooltipSize,
           tooltipPlacement = _this$props.tooltipPlacement;
-      return tooltip && _react["default"].createElement(_tooltip.TooltipTrigger, {
+      return tooltip && _react.default.createElement(_tooltip.TooltipTrigger, {
         tooltip: tooltip,
         className: 'tooltip-light',
         size: tooltipSize,
         placement: tooltipPlacement
-      }, _react["default"].createElement(_iconography.Icon, {
+      }, _react.default.createElement(_iconography.Icon, {
         verticalAlign: "baseline",
         src: "info_outline"
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "newLabelElement", function (tooltipIcon) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "newLabelElement", function (tooltipIcon) {
       var _this$props2 = _this.props,
           labelClassName = _this$props2.labelClassName,
           labelFor = _this$props2.labelFor,
           label = _this$props2.label,
           optional = _this$props2.optional,
           optionalText = _this$props2.optionalText;
-      return _react["default"].createElement("label", {
+      return _react.default.createElement("label", {
         className: labelClassName,
         htmlFor: labelFor
-      }, label, tooltipIcon, label && optional && _react["default"].createElement("span", {
+      }, label, tooltipIcon, label && optional && _react.default.createElement("span", {
         className: "optional-text type-gray"
       }, optionalText || optionalText === '' ? optionalText : '(Optional)'));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "newLabelRow", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "newLabelRow", function () {
       var _this$props3 = _this.props,
           label = _this$props3.label,
           retainLabelHeight = _this$props3.retainLabelHeight,
@@ -12225,11 +12220,11 @@ function (_React$Component) {
 
       var labelElement = _this.newLabelElement(tooltipIcon);
 
-      return (label || retainLabelHeight || postLabel) && (inline ? labelElement : _react["default"].createElement(_flexGrids.Grid, {
+      return (label || retainLabelHeight || postLabel) && (inline ? labelElement : _react.default.createElement(_flexGrids.Grid, {
         key: 'label-row',
-        className: (0, _classnames2["default"])('label-row', labelRowClassName),
+        className: (0, _classnames2.default)('label-row', labelRowClassName),
         gutter: false
-      }, _react["default"].createElement(_flexGrids.FlexCol, null, labelElement), _react["default"].createElement(_flexGrids.FlexCol, {
+      }, _react.default.createElement(_flexGrids.FlexCol, null, labelElement), _react.default.createElement(_flexGrids.FlexCol, {
         fixed: true,
         contentAlignment: "middle",
         className: "post-label"
@@ -12239,18 +12234,18 @@ function (_React$Component) {
       }) : postLabel)));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "newFieldRow", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "newFieldRow", function () {
       var _this$props4 = _this.props,
           children = _this$props4.children,
           inline = _this$props4.inline,
           fieldRowClassName = _this$props4.fieldRowClassName;
-      return children && (inline ? children : _react["default"].createElement("div", {
-        className: (0, _classnames2["default"])('field-row', fieldRowClassName),
+      return children && (inline ? children : _react.default.createElement("div", {
+        className: (0, _classnames2.default)('field-row', fieldRowClassName),
         key: "field-row"
       }, children));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "newContent", function (labelRow, fieldRow, helpRow) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "newContent", function (labelRow, fieldRow, helpRow) {
       var _this$props5 = _this.props,
           inline = _this$props5.inline,
           labelRowClassName = _this$props5.labelRowClassName,
@@ -12263,40 +12258,40 @@ function (_React$Component) {
         return key === position && labelPosition !== 'after' || key === 1 - position && labelPosition === 'after';
       };
 
-      var content = inline ? [_react["default"].createElement(_flexGrids.Grid, {
+      var content = inline ? [_react.default.createElement(_flexGrids.Grid, {
         className: "grid-inline",
         key: "top"
       }, sections.map(function (col, key) {
         var _classnames;
 
-        return _react["default"].createElement(_flexGrids.FlexCol, {
+        return _react.default.createElement(_flexGrids.FlexCol, {
           key: key,
           fixed: key === 0,
-          className: (0, _classnames2["default"])((_classnames = {}, _classnames[(0, _classnames2["default"])('label-row', labelRowClassName)] = showRowClassNames(key, 0), _classnames[(0, _classnames2["default"])('field-row', fieldRowClassName)] = showRowClassNames(key, 1), _classnames))
+          className: (0, _classnames2.default)((_classnames = {}, _classnames[(0, _classnames2.default)('label-row', labelRowClassName)] = showRowClassNames(key, 0), _classnames[(0, _classnames2.default)('field-row', fieldRowClassName)] = showRowClassNames(key, 1), _classnames))
         }, col);
       }))] : sections;
       !hideHelpRow && content.push(helpRow);
       return content;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "newHelpRow", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "newHelpRow", function () {
       var _this$props6 = _this.props,
           inline = _this$props6.inline,
           hasError = _this$props6.hasError,
           help = _this$props6.help;
-      var helpRowClassName = (0, _classnames2["default"])('help-row', {
+      var helpRowClassName = (0, _classnames2.default)('help-row', {
         'type-gray': !hasError
       });
 
       if (inline) {
-        return _react["default"].createElement(_flexGrids.Grid, {
+        return _react.default.createElement(_flexGrids.Grid, {
           key: "bottom"
-        }, _react["default"].createElement(_flexGrids.FlexCol, {
+        }, _react.default.createElement(_flexGrids.FlexCol, {
           className: helpRowClassName
         }, help));
       }
 
-      return _react["default"].createElement("div", {
+      return _react.default.createElement("div", {
         className: helpRowClassName,
         key: "help-row"
       }, help);
@@ -12323,8 +12318,8 @@ function (_React$Component) {
     var labelRow = this.newLabelRow();
     var fieldRow = this.newFieldRow();
     var helpRow = this.newHelpRow();
-    return _react["default"].createElement("div", {
-      className: (0, _classnames2["default"])('form-unit', className, {
+    return _react.default.createElement("div", {
+      className: (0, _classnames2.default)('form-unit', className, {
         'has-error': hasError,
         'inline-form-unit': inline
       })
@@ -12332,32 +12327,32 @@ function (_React$Component) {
   };
 
   return FormUnit;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.FormUnit = FormUnit;
 
 _defineProperty(FormUnit, "propTypes", {
-  children: _propTypes["default"].node,
-  className: _propTypes["default"].string,
-  fieldRowClassName: _propTypes["default"].string,
-  hasError: _propTypes["default"].bool,
-  help: _propTypes["default"].node,
-  hideHelpRow: _propTypes["default"].bool,
-  inline: _propTypes["default"].bool,
-  label: _propTypes["default"].string,
-  labelClassName: _propTypes["default"].string,
-  labelFor: _propTypes["default"].string,
-  labelPosition: _propTypes["default"].oneOf(['after']),
-  labelRowClassName: _propTypes["default"].string,
-  optional: _propTypes["default"].bool,
-  optionalText: _propTypes["default"].string,
-  postLabel: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].func]),
-  retainLabelHeight: _propTypes["default"].bool,
-  setValues: _propTypes["default"].func,
-  state: _propTypes["default"].object,
-  tooltip: _propTypes["default"].node,
-  tooltipPlacement: _propTypes["default"].oneOf(['left', 'right', 'bottom', 'top']),
-  tooltipSize: _propTypes["default"].oneOf(['sm', 'md', 'lg'])
+  children: _propTypes.default.node,
+  className: _propTypes.default.string,
+  fieldRowClassName: _propTypes.default.string,
+  hasError: _propTypes.default.bool,
+  help: _propTypes.default.node,
+  hideHelpRow: _propTypes.default.bool,
+  inline: _propTypes.default.bool,
+  label: _propTypes.default.string,
+  labelClassName: _propTypes.default.string,
+  labelFor: _propTypes.default.string,
+  labelPosition: _propTypes.default.oneOf(['after']),
+  labelRowClassName: _propTypes.default.string,
+  optional: _propTypes.default.bool,
+  optionalText: _propTypes.default.string,
+  postLabel: _propTypes.default.oneOfType([_propTypes.default.node, _propTypes.default.func]),
+  retainLabelHeight: _propTypes.default.bool,
+  setValues: _propTypes.default.func,
+  state: _propTypes.default.object,
+  tooltip: _propTypes.default.node,
+  tooltipPlacement: _propTypes.default.oneOf(['left', 'right', 'bottom', 'top']),
+  tooltipSize: _propTypes.default.oneOf(['sm', 'md', 'lg'])
 });
 
 _defineProperty(FormUnit, "defaultProps", {
@@ -12403,7 +12398,7 @@ exports.Form = _form.Form;
 
 
 exports.__esModule = true;
-exports["default"] = void 0;
+exports.default = void 0;
 var scrollbarWidth;
 var DomHelpers = {
   documentExists: function documentExists() {
@@ -12452,7 +12447,7 @@ var DomHelpers = {
   }
 };
 var _default = DomHelpers;
-exports["default"] = _default;
+exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
@@ -12473,7 +12468,7 @@ exports.find = exports.mergeProps = void 0;
 
 var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -12521,7 +12516,7 @@ var mergeProps = function mergeProps(reactInstanceProps, defaultProps) {
       defaultStyle = _defaultProps$style === void 0 ? {} : _defaultProps$style,
       remainingDefaultProps = _objectWithoutPropertiesLoose(defaultProps, ["className", "id", "style"]);
 
-  className = (0, _classnames["default"])(defaultClassName, className);
+  className = (0, _classnames.default)(defaultClassName, className);
   style = _extends({}, defaultStyle, style);
   id = id || defaultId;
   remainingProps = _extends({}, remainingDefaultProps, remainingProps);
@@ -12565,9 +12560,9 @@ exports.find = _helpers.find;
 
 var _dom_helpers = _interopRequireDefault(__webpack_require__(/*! ./dom_helpers */ "./node_modules/yokui/react/helpers/dom_helpers.js"));
 
-exports.DomHelpers = _dom_helpers["default"];
+exports.DomHelpers = _dom_helpers.default;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 
@@ -12595,9 +12590,9 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 
 var Icons = _interopRequireWildcard(__webpack_require__(/*! ./icons */ "./node_modules/yokui/react/iconography/icons.js"));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -12634,7 +12629,7 @@ function (_React$Component) {
 
     var isSpinner = src.indexOf('spinner') === 0;
     var props = (0, _helpers.mergeProps)(others, {
-      className: (0, _classnames["default"])('icon', "icon-" + verticalAlign, {
+      className: (0, _classnames.default)('icon', "icon-" + verticalAlign, {
         'spinner': isSpinner
       })
     });
@@ -12648,21 +12643,21 @@ function (_React$Component) {
     }
 
     var iconClassName = "icon-" + (isSpinner ? iconSrc.replace('_', '-') : iconSrc);
-    return _react["default"].createElement("div", props, _react["default"].cloneElement(renderedIcon, {
+    return _react.default.createElement("div", props, _react.default.cloneElement(renderedIcon, {
       className: iconClassName,
       key: iconSrc
     }));
   };
 
   return Icon;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.Icon = Icon;
 
 _defineProperty(Icon, "propTypes", {
-  src: _propTypes["default"].string.isRequired,
-  style: _propTypes["default"].object,
-  verticalAlign: _propTypes["default"].oneOf(['middle', 'baseline'])
+  src: _propTypes.default.string.isRequired,
+  style: _propTypes.default.object,
+  verticalAlign: _propTypes.default.oneOf(['middle', 'baseline'])
 });
 
 _defineProperty(Icon, "defaultProps", {
@@ -12690,288 +12685,288 @@ exports.zoom_out = exports.zoom_in = exports.windows_logo = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var account_circle = _react["default"].createElement("svg", {
+var account_circle = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 6c3.31 0 6 2.69 6 6 0 3.32-2.69 6-6 6s-6-2.68-6-6c0-3.31 2.69-6 6-6zm0 28.4c-5.01 0-9.41-2.56-12-6.44.05-3.97 8.01-6.16 12-6.16s11.94 2.19 12 6.16c-2.59 3.88-6.99 6.44-12 6.44z"
 }));
 
 exports.account_circle = account_circle;
 
-var add = _react["default"].createElement("svg", {
+var add = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38 26H26v12h-4V26H10v-4h12V10h4v12h12v4z"
 }));
 
 exports.add = add;
 
-var add_circle = _react["default"].createElement("svg", {
+var add_circle = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"
 }));
 
 exports.add_circle = add_circle;
 
-var add_circle_outline = _react["default"].createElement("svg", {
+var add_circle_outline = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M26 14h-4v8h-8v4h8v8h4v-8h8v-4h-8v-8zM24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"
 }));
 
 exports.add_circle_outline = add_circle_outline;
 
-var apple_logo = _react["default"].createElement("svg", {
+var apple_logo = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M40.14014,35.17214a21.74711,21.74711,0,0,1-2.15055,3.86655,19.64466,19.64466,0,0,1-2.77029,3.348,5.374,5.374,0,0,1-3.56039,1.56786,8.92388,8.92388,0,0,1-3.28879-.78516,9.43681,9.43681,0,0,0-3.54063-.78269,9.75685,9.75685,0,0,0-3.64088.78269,9.79614,9.79614,0,0,1-3.14608.82714,5.05987,5.05987,0,0,1-3.64088-1.60983,20.6281,20.6281,0,0,1-2.89744-3.46656,23.97487,23.97487,0,0,1-3.0641-6.08624,22.28558,22.28558,0,0,1-1.28663-7.25361,13.24636,13.24636,0,0,1,1.73945-6.93016,10.2039,10.2039,0,0,1,3.6431-3.68507,9.80028,9.80028,0,0,1,4.92528-1.38983,11.597,11.597,0,0,1,3.80951.88664,12.24642,12.24642,0,0,0,3.02164.88861A18.08065,18.08065,0,0,0,27.643,14.30389a11.07485,11.07485,0,0,1,4.55418-.80862,9.67,9.67,0,0,1,7.57508,3.98827,8.42594,8.42594,0,0,0-4.469,7.65458A8.44433,8.44433,0,0,0,38.076,31.50065a9.11178,9.11178,0,0,0,2.77029,1.81723q-.33332.96664-.70615,1.85426ZM32.42186,4.80022a8.5332,8.5332,0,0,1-2.18759,5.59711c-1.758,2.05525-3.88433,3.24286-6.19018,3.05546a6.22738,6.22738,0,0,1-.04642-.758,8.76728,8.76728,0,0,1,2.32067-5.65612A8.93492,8.93492,0,0,1,29.14541,4.916,8.42934,8.42934,0,0,1,32.37988,4a7.26578,7.26578,0,0,1,.042.8002Z"
 }));
 
 exports.apple_logo = apple_logo;
 
-var arrow_back = _react["default"].createElement("svg", {
+var arrow_back = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M40 22H15.66l11.17-11.17L24 8 8 24l16 16 2.83-2.83L15.66 26H40v-4z"
 }));
 
 exports.arrow_back = arrow_back;
 
-var arrow_downward = _react["default"].createElement("svg", {
+var arrow_downward = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M40 24l-2.82-2.82L26 32.34V8h-4v24.34L10.84 21.16 8 24l16 16 16-16z"
 }));
 
 exports.arrow_downward = arrow_downward;
 
-var arrow_drop_down = _react["default"].createElement("svg", {
+var arrow_drop_down = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M14 20l10 10 10-10z"
 }));
 
 exports.arrow_drop_down = arrow_drop_down;
 
-var arrow_drop_left = _react["default"].createElement("svg", {
+var arrow_drop_left = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M29 16l-10 10 10 10z"
 }));
 
 exports.arrow_drop_left = arrow_drop_left;
 
-var arrow_drop_right = _react["default"].createElement("svg", {
+var arrow_drop_right = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M19 16l10 10-10 10z"
 }));
 
 exports.arrow_drop_right = arrow_drop_right;
 
-var arrow_drop_up = _react["default"].createElement("svg", {
+var arrow_drop_up = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M14 28l10-10 10 10z"
 }));
 
 exports.arrow_drop_up = arrow_drop_up;
 
-var arrow_forward = _react["default"].createElement("svg", {
+var arrow_forward = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 8l-2.83 2.83L32.34 22H8v4h24.34L21.17 37.17 24 40l16-16z"
 }));
 
 exports.arrow_forward = arrow_forward;
 
-var arrow_up_circle = _react["default"].createElement("svg", {
+var arrow_up_circle = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24,4A20,20,0,1,0,44,24,19.99449,19.99449,0,0,0,24,4Zm0,36A16,16,0,1,1,40,24,16.02125,16.02125,0,0,1,24,40Z"
-}), _react["default"].createElement("polygon", {
+}), _react.default.createElement("polygon", {
   points: "34.607 23.607 24 13 24 13 24 13 13.393 23.607 16.222 26.435 22 20.657 22 35 26 35 26 20.657 31.778 26.435 34.607 23.607"
 }));
 
 exports.arrow_up_circle = arrow_up_circle;
 
-var arrow_upward = _react["default"].createElement("svg", {
+var arrow_upward = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M8 24l2.83 2.83L22 15.66V40h4V15.66l11.17 11.17L40 24 24 8 8 24z"
 }));
 
 exports.arrow_upward = arrow_upward;
 
-var autorenew = _react["default"].createElement("svg", {
+var autorenew = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 12v6l8-8-8-8v6C15.16 8 8 15.16 8 24c0 3.14.92 6.05 2.48 8.52l2.92-2.92c-.89-1.67-1.4-3.57-1.4-5.6 0-6.63 5.37-12 12-12zm13.52 3.48L34.6 18.4c.89 1.67 1.4 3.57 1.4 5.6 0 6.63-5.37 12-12 12v-6l-8 8 8 8v-6c8.84 0 16-7.16 16-16 0-3.14-.92-6.05-2.48-8.52z"
 }));
 
 exports.autorenew = autorenew;
 
-var cached = _react["default"].createElement("svg", {
+var cached = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38 16l-8 8h6c0 6.63-5.37 12-12 12-2.03 0-3.93-.51-5.61-1.39l-2.92 2.92C17.95 39.08 20.86 40 24 40c8.84 0 16-7.16 16-16h6l-8-8zm-26 8c0-6.63 5.37-12 12-12 2.03 0 3.93.51 5.61 1.39l2.92-2.92C30.05 8.92 27.14 8 24 8 15.16 8 8 15.16 8 24H2l8 8 8-8h-6z"
 }));
 
 exports.cached = cached;
 
-var cancel = _react["default"].createElement("svg", {
+var cancel = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 27.17L31.17 34 24 26.83 16.83 34 14 31.17 21.17 24 14 16.83 16.83 14 24 21.17 31.17 14 34 16.83 26.83 24 34 31.17z"
 }));
 
 exports.cancel = cancel;
 
-var chat = _react["default"].createElement("svg", {
+var chat = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M40 4H8C5.79 4 4.02 5.79 4.02 8L4 44l8-8h28c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zM12 18h24v4H12v-4zm16 10H12v-4h16v4zm8-12H12v-4h24v4z"
 }));
 
 exports.chat = chat;
 
-var check = _react["default"].createElement("svg", {
+var check = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M18 32.34L9.66 24l-2.83 2.83L18 38l24-24-2.83-2.83z"
 }));
 
 exports.check = check;
 
-var check_circle = _react["default"].createElement("svg", {
+var check_circle = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24c0 11.04 8.95 20 20 20 11.04 0 20-8.96 20-20 0-11.05-8.96-20-20-20zm-4 30L10 24l2.83-2.83L20 28.34l15.17-15.17L38 16 20 34z"
 }));
 
 exports.check_circle = check_circle;
 
-var check_circle_outline = _react["default"].createElement("svg", {
+var check_circle_outline = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M0 0h24v24H0V0zm0 0h24v24H0V0z",
   fill: "none"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
 }));
 
 exports.check_circle_outline = check_circle_outline;
 
-var chevron_down = _react["default"].createElement("svg", {
+var chevron_down = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M33.17 17.17L24 26.34l-9.17-9.17L12 20l12 12 12-12z"
 }));
 
 exports.chevron_down = chevron_down;
 
-var chevron_left = _react["default"].createElement("svg", {
+var chevron_left = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M30.83 14.83L28 12 16 24l12 12 2.83-2.83L21.66 24z"
 }));
 
 exports.chevron_left = chevron_left;
 
-var chevron_right = _react["default"].createElement("svg", {
+var chevron_right = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M20 12l-2.83 2.83L26.34 24l-9.17 9.17L20 36l12-12z"
 }));
 
 exports.chevron_right = chevron_right;
 
-var chevron_up = _react["default"].createElement("svg", {
+var chevron_up = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 16L12 28l2.83 2.83L24 21.66l9.17 9.17L36 28z"
 }));
 
 exports.chevron_up = chevron_up;
 
-var circle = _react["default"].createElement("svg", {
+var circle = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("circle", {
+}, _react.default.createElement("circle", {
   cx: "24",
   cy: "24",
   r: "16"
@@ -12979,16 +12974,16 @@ var circle = _react["default"].createElement("svg", {
 
 exports.circle = circle;
 
-var circle_outline = _react["default"].createElement("svg", {
+var circle_outline = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24,12A12,12,0,1,1,12,24,12.01358,12.01358,0,0,1,24,12m0-4A16,16,0,1,0,40,24,16,16,0,0,0,24,8Z"
 }));
 
 exports.circle_outline = circle_outline;
 
-var close = _react["default"].createElement("svg", {
+var close = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   fill: "none",
@@ -12996,12 +12991,12 @@ var close = _react["default"].createElement("svg", {
   strokeWidth: "2.5",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("line", {
+}, _react.default.createElement("line", {
   x1: "18.5",
   x2: "5.5",
   y1: "5.5",
   y2: "18.5"
-}), _react["default"].createElement("line", {
+}), _react.default.createElement("line", {
   x1: "5.5",
   x2: "18.5",
   y1: "5.5",
@@ -13010,230 +13005,230 @@ var close = _react["default"].createElement("svg", {
 
 exports.close = close;
 
-var close_circle_outline = _react["default"].createElement("svg", {
+var close_circle_outline = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M29.17 16L24 21.17 18.83 16 16 18.83 21.17 24 16 29.17 18.83 32 24 26.83 29.17 32 32 29.17 26.83 24 32 18.83 29.17 16zM24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"
 }));
 
 exports.close_circle_outline = close_circle_outline;
 
-var cloud_done = _react["default"].createElement("svg", {
+var cloud_done = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38.71 20.07C37.35 13.19 31.28 8 24 8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93zM20 34l-7-7 2.83-2.83L20 28.34l10.35-10.35 2.83 2.83L20 34z"
 }));
 
 exports.cloud_done = cloud_done;
 
-var cloud_download = _react["default"].createElement("svg", {
+var cloud_download = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38.71 20.07C37.35 13.19 31.28 8 24 8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93zM34 26L24 36 14 26h6v-8h8v8h6z"
 }));
 
 exports.cloud_download = cloud_download;
 
-var cloud_upload = _react["default"].createElement("svg", {
+var cloud_upload = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38.71 20.07C37.35 13.19 31.28 8 24 8c-5.78 0-10.79 3.28-13.3 8.07C4.69 16.72 0 21.81 0 28c0 6.63 5.37 12 12 12h26c5.52 0 10-4.48 10-10 0-5.28-4.11-9.56-9.29-9.93zM28 26v8h-8v-8h-6l10-10 10 10h-6z"
 }));
 
 exports.cloud_upload = cloud_upload;
 
-var code = _react["default"].createElement("svg", {
+var code = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M16.8,33.2,7.7,24l9.2-9.2L14,12,2,24,14,36Zm14.4,0L40.4,24l-9.2-9.2L34,12,46,24,34,36Z"
-}), _react["default"].createElement("polygon", {
+}), _react.default.createElement("polygon", {
   points: "22.9 36 29.3 12 25.1 12 18.7 36 22.9 36"
 }));
 
 exports.code = code;
 
-var collapse = _react["default"].createElement("svg", {
+var collapse = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M16.82,24,26,14.82,23.18,12l-12,12,12,12L26,33.18ZM36,36V12H32V36Z"
 }));
 
 exports.collapse = collapse;
 
-var compare_arrows_alt = _react["default"].createElement("svg", {
+var compare_arrows_alt = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("polygon", {
+}, _react.default.createElement("polygon", {
   points: "15.6 30.1 5.7 40 8.5 42.8 18.4 32.9 22.7 37.1 22.7 25.8 11.3 25.8 15.6 30.1"
-}), _react["default"].createElement("polygon", {
+}), _react.default.createElement("polygon", {
   points: "37.7 22.2 33.4 17.9 43.3 8 40.5 5.2 30.6 15.1 26.3 10.9 26.3 22.2 37.7 22.2"
 }));
 
 exports.compare_arrows_alt = compare_arrows_alt;
 
-var copy = _react["default"].createElement("svg", {
+var copy = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
 }));
 
 exports.copy = copy;
 
-var database = _react["default"].createElement("svg", {
+var database = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24,33C13,33,4,30.8,4,28V21.8a1.05018,1.05018,0,0,1,.5-.9.90151.90151,0,0,1,.5-.1.74936.74936,0,0,1,.5.1C8.6,22.8,15.8,24,24,24s15.4-1.2,18.5-3.1a1.3,1.3,0,0,1,1,0,1.05019,1.05019,0,0,1,.5.9V28C44,30.8,35,33,24,33Z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M24,44C13,44,4,41.8,4,39V32.8a1.05018,1.05018,0,0,1,.5-.9.90151.90151,0,0,1,.5-.1.74936.74936,0,0,1,.5.1C8.6,33.8,15.8,35,24,35s15.4-1.2,18.5-3.1a1.3,1.3,0,0,1,1,0,1.05019,1.05019,0,0,1,.5.9V39C44,41.8,35,44,24,44Z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M24,22C13,22,4,19.8,4,17V9c0-2.8,9-5,20-5S44,6.2,44,9v8C44,19.8,35,22,24,22Z"
 }));
 
 exports.database = database;
 
-var download = _react["default"].createElement("svg", {
+var download = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38 18h-8V6H18v12h-8l14 14 14-14zM10 36v4h28v-4H10z"
 }));
 
 exports.download = download;
 
-var error = _react["default"].createElement("svg", {
+var error = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.96 4 4 12.95 4 24s8.96 20 20 20 20-8.95 20-20S35.04 4 24 4zm2 30h-4v-4h4v4zm0-8h-4V14h4v12z"
 }));
 
 exports.error = error;
 
-var error_outline = _react["default"].createElement("svg", {
+var error_outline = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
 }));
 
 exports.error_outline = error_outline;
 
-var euro_symbol = _react["default"].createElement("svg", {
+var euro_symbol = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M30 37c-5.01 0-9.36-2.84-11.53-7H30v-4H17.17c-.1-.65-.17-1.32-.17-2s.07-1.35.17-2H30v-4H18.47c2.17-4.16 6.51-7 11.53-7 3.23 0 6.18 1.18 8.45 3.13L42 10.6C38.82 7.75 34.61 6 30 6c-7.83 0-14.48 5.01-16.95 12H6v4h6.12c-.08.66-.12 1.32-.12 2 0 .68.04 1.34.12 2H6v4h7.05c2.47 6.99 9.12 12 16.95 12 4.61 0 8.82-1.75 12-4.6l-3.55-3.54C36.18 35.81 33.23 37 30 37z"
 }));
 
 exports.euro_symbol = euro_symbol;
 
-var exit_to_app = _react["default"].createElement("svg", {
+var exit_to_app = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M20.17 31.17L23 34l10-10-10-10-2.83 2.83L25.34 22H6v4h19.34l-5.17 5.17zM38 6H10c-2.21 0-4 1.79-4 4v8h4v-8h28v28H10v-8H6v8c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V10c0-2.21-1.79-4-4-4z"
 }));
 
 exports.exit_to_app = exit_to_app;
 
-var feedback = _react["default"].createElement("svg", {
+var feedback = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M40 4H8C5.79 4 4.02 5.79 4.02 8L4 44l8-8h28c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zM26 28h-4v-4h4v4zm0-8h-4v-8h4v8z"
 }));
 
 exports.feedback = feedback;
 
-var filter_list = _react["default"].createElement("svg", {
+var filter_list = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M20 36h8v-4h-8v4zM6 12v4h36v-4H6zm6 14h24v-4H12v4z"
 }));
 
 exports.filter_list = filter_list;
 
-var format_align_center = _react["default"].createElement("svg", {
+var format_align_center = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M14 30v4h20v-4H14zM6 42h36v-4H6v4zm0-16h36v-4H6v4zm8-12v4h20v-4H14zM6 6v4h36V6H6z"
 }));
 
 exports.format_align_center = format_align_center;
 
-var format_align_justify = _react["default"].createElement("svg", {
+var format_align_justify = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 42h36v-4H6v4zm0-8h36v-4H6v4zm0-8h36v-4H6v4zm0-8h36v-4H6v4zM6 6v4h36V6H6z"
 }));
 
 exports.format_align_justify = format_align_justify;
 
-var format_align_left = _react["default"].createElement("svg", {
+var format_align_left = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M30 30H6v4h24v-4zm0-16H6v4h24v-4zM6 26h36v-4H6v4zm0 16h36v-4H6v4zM6 6v4h36V6H6z"
 }));
 
 exports.format_align_left = format_align_left;
 
-var format_align_right = _react["default"].createElement("svg", {
+var format_align_right = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 42h36v-4H6v4zm12-8h24v-4H18v4zM6 26h36v-4H6v4zm12-8h24v-4H18v4zM6 6v4h36V6H6z"
 }));
 
 exports.format_align_right = format_align_right;
 
-var github = _react["default"].createElement("svg", {
+var github = _react.default.createElement("svg", {
   viewBox: "0 0 40 39.01226",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   style: {
     'fillRule': 'evenodd'
   },
@@ -13243,64 +13238,64 @@ var github = _react["default"].createElement("svg", {
 
 exports.github = github;
 
-var grip = _react["default"].createElement("svg", {
+var grip = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M17,16a4,4,0,1,0-4-4A3.9989,3.9989,0,0,0,17,16Zm0,4a4,4,0,1,0,4,4A3.9989,3.9989,0,0,0,17,20Zm0,12a4,4,0,1,0,4,4A3.9989,3.9989,0,0,0,17,32Z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M31,16a4,4,0,1,0-4-4A3.9989,3.9989,0,0,0,31,16Zm0,4a4,4,0,1,0,4,4A3.9989,3.9989,0,0,0,31,20Zm0,12a4,4,0,1,0,4,4A3.9989,3.9989,0,0,0,31,32Z"
 }));
 
 exports.grip = grip;
 
-var help = _react["default"].createElement("svg", {
+var help = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm2 34h-4v-4h4v4zm4.13-15.49l-1.79 1.84C26.9 25.79 26 27 26 30h-4v-1c0-2.21.9-4.21 2.34-5.66l2.49-2.52C27.55 20.1 28 19.1 28 18c0-2.21-1.79-4-4-4s-4 1.79-4 4h-4c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.76-.71 3.35-1.87 4.51z"
 }));
 
 exports.help = help;
 
-var help_outline = _react["default"].createElement("svg", {
+var help_outline = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
 }));
 
 exports.help_outline = help_outline;
 
-var highlight = _react["default"].createElement("svg", {
+var highlight = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("defs", null, _react["default"].createElement("path", {
+}, _react.default.createElement("defs", null, _react.default.createElement("path", {
   id: "a",
   d: "M0 0h24v24H0V0z"
-})), _react["default"].createElement("clipPath", {
+})), _react.default.createElement("clipPath", {
   id: "b"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M0 0h24v24H0V0z"
-})), _react["default"].createElement("path", {
+})), _react.default.createElement("path", {
   clipPath: "url(#b)",
   d: "M6 14l3 3v5h6v-5l3-3V9H6zm5-12h2v3h-2zM3.5 5.875L4.914 4.46l2.12 2.122L5.62 7.997zm13.46.71l2.123-2.12 1.414 1.414L18.375 8z"
 }));
 
 exports.highlight = highlight;
 
-var html5 = _react["default"].createElement("svg", {
+var html5 = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M36.683,6H8.61249l.233,2.69531,2.4234,28.03094.14752,1.7066L13.06451,38.9l10.25916,2.90808L24.00043,42l.67682-.19189L34.9364,38.9l1.648-.46716.14752-1.7066L39.1554,8.69531,39.38843,6ZM34.25958,36.27173l-10.25916,3.0285L13.74127,36.21155,11.31787,8H36.683Z"
-}), _react["default"].createElement("polygon", {
+}), _react.default.createElement("polygon", {
   style: {
     'fillRule': 'evenodd'
   },
@@ -13309,173 +13304,173 @@ var html5 = _react["default"].createElement("svg", {
 
 exports.html5 = html5;
 
-var info = _react["default"].createElement("svg", {
+var info = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm2 30h-4V22h4v12zm0-16h-4v-4h4v4z"
 }));
 
 exports.info = info;
 
-var info_outline = _react["default"].createElement("svg", {
+var info_outline = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M22 34h4V22h-4v12zm2-30C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16zm-2-22h4v-4h-4v4z"
 }));
 
 exports.info_outline = info_outline;
 
-var laptop = _react["default"].createElement("svg", {
+var laptop = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M40 36c2.2 0 4-1.8 4-4V12c0-2.2-1.8-4-4-4H8c-2.2 0-4 1.8-4 4v20c0 2.2 1.8 4 4 4H0v4h48v-4h-8zM8 12h32v20H8V12z"
 }));
 
 exports.laptop = laptop;
 
-var link = _react["default"].createElement("svg", {
+var link = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M7.8 24c0-3.42 2.78-6.2 6.2-6.2h8V14h-8C8.48 14 4 18.48 4 24s4.48 10 10 10h8v-3.8h-8c-3.42 0-6.2-2.78-6.2-6.2zm8.2 2h16v-4H16v4zm18-12h-8v3.8h8c3.42 0 6.2 2.78 6.2 6.2s-2.78 6.2-6.2 6.2h-8V34h8c5.52 0 10-4.48 10-10s-4.48-10-10-10z"
 }));
 
 exports.link = link;
 
-var link_disconnect = _react["default"].createElement("svg", {
+var link_disconnect = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("polyline", {
+}, _react.default.createElement("polyline", {
   points: "32 23.516 32 22 30.484 22"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M40.27142,31.78749a9.999,9.999,0,0,0-6.2711-17.78789h-8v3.51594l.28355.28406h7.71645a6.19883,6.19883,0,0,1,3.55874,11.27517"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M9.41406,6.58594,6.58594,9.41406l4.91388,4.91388a9.994,9.994,0,0,0,2.50049,19.67163h8v-3.8h-8a6.2,6.2,0,0,1,0-12.4h.97113l4.19989,4.2h-3.171v4h7.17084l4.19989,4.2H26.00031v3.8h5.17114l7.41449,7.41449,2.82813-2.82812Z"
 }));
 
 exports.link_disconnect = link_disconnect;
 
-var linux_logo = _react["default"].createElement("svg", {
+var linux_logo = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M23.39476,13.77386a.12971.12971,0,0,1-.13244.13244h-.13244c-.13244,0-.13244-.13244-.26487-.26487a.46239.46239,0,0,1-.13244-.26487c0-.13244,0-.13244.13244-.13244l.26487.13244c.13244.13244.26487.26487.26487.39731m-2.38387-1.32437c0-.66219-.26487-1.0595-.66219-1.0595a.12971.12971,0,0,1-.13244.13244v.26487h.39731c0,.26487.13244.39731.13244.66219h.26487m4.6353-.66219c.26487,0,.39731.26487.52975.66219h.26487a.48653.48653,0,0,1-.13244-.39731.48653.48653,0,0,0-.13244-.39731c-.13244-.13244-.26487-.26487-.39731-.26487a.46239.46239,0,0,1-.26487.13244c0,.13244.13244.13244.13244.26487m-3.97312,2.119c-.13244,0-.13244,0-.13244-.13244a.48653.48653,0,0,1,.13244-.39731.58007.58007,0,0,0,.39731-.13244.12971.12971,0,0,1,.13244.13244c0,.13244-.13244.26487-.39731.52975h-.13244m-1.45681-.13244c-.52975-.26487-.66219-.66219-.66219-1.32437a1.11743,1.11743,0,0,1,.26487-.92706.72831.72831,0,0,1,.66219-.39731c.26487,0,.39731.13244.66219.39731a3.867,3.867,0,0,1,.26487,1.19193v.26487h.13244V12.8468c.13244,0,.13244-.26487.13244-.79462a1.96817,1.96817,0,0,0-.26487-1.19193,1.1796,1.1796,0,0,0-1.0595-.66219.99592.99592,0,0,0-.92706.66219,3.11436,3.11436,0,0,0-.31785,1.58925,2.16942,2.16942,0,0,0,.71516,1.58925c.13244-.13244.26487-.13244.39731-.26487M36.77092,32.4475c.13244,0,.13244-.053.13244-.17217a1.43959,1.43959,0,0,0-.52975-1.01977,3.2335,3.2335,0,0,0-1.85412-.75489c-.13244-.01324-.26487-.01324-.26487-.01324a.9011.9011,0,0,0-.26487-.02649c-.13244-.01324-.39731-.03973-.52975-.06622a10.53071,10.53071,0,0,0,.52975-3.2712,5.19245,5.19245,0,0,0-.79462-3.04605,2.68516,2.68516,0,0,0-1.72168-1.32437c-.13244.13244-.13244.13244-.13244.26487a3.31487,3.31487,0,0,1,1.72168,1.58925,6.313,6.313,0,0,1,.52975,2.64874,9.25525,9.25525,0,0,1-.66219,3.24471,2.99822,2.99822,0,0,0-1.45681,1.47005c0,.11919,0,.18541.13244.18541a1.56674,1.56674,0,0,0,.26487-.34434c.26487-.22514.39731-.45029.66219-.67543a1.96819,1.96819,0,0,1,1.0595-.34434,4.49872,4.49872,0,0,1,1.72168.27812,1.60325,1.60325,0,0,1,.92706.56948q.19866.298.39731.55624a.30233.30233,0,0,0,.13244.25163M24.5867,13.24411a.99243.99243,0,0,1-.13244-.66219A1.78047,1.78047,0,0,1,24.71913,11.39a1.1447,1.1447,0,0,1,.79462-.39731,1.34053,1.34053,0,0,1,.92706.52975,3.11691,3.11691,0,0,1,.26487,1.0595,1.0648,1.0648,0,0,1-.79462,1.19193.46239.46239,0,0,0,.26487.13244c.26487,0,.39731.13244.66219.26487a11.75287,11.75287,0,0,0,.26487-1.98656,3.00511,3.00511,0,0,0-.39731-1.72168,1.70032,1.70032,0,0,0-1.32437-.52975,2.13613,2.13613,0,0,0-1.19193.39731,1.7612,1.7612,0,0,0-.39731,1.0595,3.666,3.666,0,0,0,.39731,1.72168c.13244,0,.26487.13244.39731.13244m1.58925,2.119a7.74909,7.74909,0,0,1-4.10555,1.72168,4.206,4.206,0,0,1-2.64874-1.0595,2.89493,2.89493,0,0,0,.39731.66219l.79462.79462a2.61476,2.61476,0,0,0,1.85412.79462,6.32167,6.32167,0,0,0,3.31093-1.45681l1.19193-.79462a1.34053,1.34053,0,0,0,.52975-.92706c0-.13244,0-.26487-.13244-.26487-.13244-.26487-.79462-.66219-2.119-1.0595a7.73738,7.73738,0,0,0-2.64874-.79462,4.93151,4.93151,0,0,0-1.98656.79462c-.79462.52975-1.32437,1.0595-1.32437,1.58925a1.639,1.639,0,0,1,.26487.39731,3.84118,3.84118,0,0,0,2.38387,1.0595,7.16244,7.16244,0,0,0,4.10555-1.85412v.26487a.12971.12971,0,0,1,.13244.13244M29.222,42.11542a2.83251,2.83251,0,0,0,3.31093,1.37735,1.72937,1.72937,0,0,0,.66219-.25163c.13244-.09271.26487-.18541.39731-.29136a1.581,1.581,0,0,0,.39731-.22514l2.25143-1.94683a8.917,8.917,0,0,1,1.72168-1.11247,11.41533,11.41533,0,0,1,1.32437-.64894,2.36362,2.36362,0,0,0,.92706-.47677,1.36686,1.36686,0,0,0,.26487-.76814,1.18682,1.18682,0,0,0-.52975-.88733,2.69467,2.69467,0,0,0-.79462-.45029,3.0573,3.0573,0,0,1-.92706-.66219,3.57172,3.57172,0,0,1-.66219-1.44357L37.4331,33.56c-.13244-.35758-.13244-.62245-.26487-.76814,0-.03973,0-.053-.13244-.053a.72682.72682,0,0,0-.52975.34434c-.26487.22514-.52975.47677-.79462.74165-.13244.26487-.52975.50326-.79462.7284a2.381,2.381,0,0,1-1.0595.34434,2.10589,2.10589,0,0,1-1.98656-.86084A4.8268,4.8268,0,0,1,31.341,32.5667c-.26487-.22514-.39731-.34434-.66219-.34434-.66219,0-.92706.68867-.92706,2.07926v4.1188a4.20319,4.20319,0,0,0-.13244.79462,4.65411,4.65411,0,0,0-.13244,1.40383L29.222,42.08893v.02251m-19.20339-.70059a21.72914,21.72914,0,0,1,4.25123,1.15353,14.15968,14.15968,0,0,0,2.94011.88733,2.89085,2.89085,0,0,0,2.33089-1.20385,1.96,1.96,0,0,0,.13244-.90587q0-1.8773-2.26468-4.75449L16.508,35.38231a12.51786,12.51786,0,0,1-.70192-1.1522,11.3233,11.3233,0,0,0-.7284-1.19193,3.57591,3.57591,0,0,0-.80787-.91382,2.72,2.72,0,0,0-1.17869-.60921,1.79193,1.79193,0,0,0-1.12572.543,1.61978,1.61978,0,0,0-.31785.82111.784.784,0,0,1-.25163.55624,2.41491,2.41491,0,0,1-.66219.2119c-.06622,0-.18541,0-.35758.01324h-.35758a3.40561,3.40561,0,0,0-1.43032.2119A1.94348,1.94348,0,0,0,8.085,35.15717a6.046,6.046,0,0,0,.15892,1.07274,5.93184,5.93184,0,0,1,.15892,1.16545,3.0965,3.0965,0,0,1-.49,1.629,2.96211,2.96211,0,0,0-.50326,1.29524c.13244.51386,1.00652.87541,2.609,1.08731m4.41016-12.03854a8.2437,8.2437,0,0,1,.7284-3.11227,8.72835,8.72835,0,0,1,1.41708-2.51631c-.02649-.13244-.09271-.13244-.19866-.13244l-.13244-.13244a10.14219,10.14219,0,0,0-1.40383,2.64874,7.87486,7.87486,0,0,0-.8476,3.099,3.0198,3.0198,0,0,0,.41056,1.56276A9.37116,9.37116,0,0,0,16.508,32.666l1.40383.91382C19.4084,34.87773,20.203,35.7783,20.203,36.308a1.083,1.083,0,0,1-.52975.86084,1.25371,1.25371,0,0,1-.92706.47677c-.02649,0-.03973.02649-.03973.09271,0,.01324.13244.27812.41056.79462.55624.75489,1.74817,1.12572,3.33742,1.12572a8.03114,8.03114,0,0,0,6.88673-3.5758,2.65817,2.65817,0,0,0-.13244-1.24491v-.49a3.7306,3.7306,0,0,1,.39731-1.93358,1.05026,1.05026,0,0,1,.92706-.62245,1.31071,1.31071,0,0,1,.79462.29136,20.05427,20.05427,0,0,0,.13244-2.70172,11.42294,11.42294,0,0,0-.26487-3.12552,6.98049,6.98049,0,0,0-.66219-1.98656l-.79462-1.19194c-.26487-.39731-.39731-.79462-.66219-1.19193a5.69159,5.69159,0,0,1-.26487-1.58925c-.39731-.66219-.66219-1.32437-1.0595-1.98656-.26487-.66219-.52975-1.32437-.79462-1.85412l-1.19193.92706a5.94931,5.94931,0,0,1-3.31093,1.32437,2.15123,2.15123,0,0,1-1.85412-.66219l-.79462-.66219a3.45294,3.45294,0,0,1-.39731,1.45681L18.574,20.42883a8.079,8.079,0,0,0-.60921,1.85412,2.64518,2.64518,0,0,1-.11919.52975l-.99328,1.98656a11.71265,11.71265,0,0,0-1.61573,5.35046,5.75306,5.75306,0,0,0,.07946.9403,1.96279,1.96279,0,0,1-.88733-1.72168m9.4825,12.52856a9.11482,9.11482,0,0,0-3.97312.6953v-.03973a2.97444,2.97444,0,0,1-2.43684,1.20518,10.13223,10.13223,0,0,1-3.04605-.75489,35.96684,35.96684,0,0,0-3.695-1.08334c-.10595-.03046-.34434-.07549-.7284-.13641-.37082-.0596-.71516-.12052-1.01977-.18144a7.6844,7.6844,0,0,1-.9403-.2715,2.32668,2.32668,0,0,1-.79462-.40658.74868.74868,0,0,1-.27282-.56551,1.946,1.946,0,0,1,.13509-.6794c.08476-.14568.17747-.29136.27017-.4238a2.56623,2.56623,0,0,0,.22514-.41056,1.94032,1.94032,0,0,0,.18541-.37082,1.63855,1.63855,0,0,0,.13244-.38407,2.0446,2.0446,0,0,0,.053-.39731c0-.13244-.053-.52975-.15892-1.23167a11.93723,11.93723,0,0,1-.15892-1.31113,2.01807,2.01807,0,0,1,.4238-1.37735,1.19648,1.19648,0,0,1,.86084-.50326h1.523a1.36219,1.36219,0,0,0,.58272-.22514c.09271-.2119.17217-.38407.22514-.543.06622-.15892.09271-.27812.11919-.33109.02649-.07946.053-.15892.07946-.22514a1.82835,1.82835,0,0,1,.2119-.30461.80158.80158,0,0,1-.15892-.51651,1.35036,1.35036,0,0,1,.02649-.35758,4.778,4.778,0,0,1,.70192-2.03953l.46353-.83435a18.32145,18.32145,0,0,0,.88733-1.77466,17.32335,17.32335,0,0,0,.7284-2.38387A6.58672,6.58672,0,0,1,15.87233,20.952L16.86561,19.76a9.3496,9.3496,0,0,0,1.39059-1.98656,4.26717,4.26717,0,0,0,.38407-1.72168c0-.26487-.06622-1.0595-.2119-2.38387-.13244-1.32437-.19866-2.64874-.19866-3.84068a8.5138,8.5138,0,0,1,.25163-2.25143,4.70863,4.70863,0,0,1,.92706-1.85412,3.55349,3.55349,0,0,1,1.72168-1.32437A8.80441,8.80441,0,0,1,23.91127,4a3.66661,3.66661,0,0,1,1.19193.13244,4.57879,4.57879,0,0,1,1.58925.39731,5.46874,5.46874,0,0,1,1.45681.92706,5.94047,5.94047,0,0,1,1.32437,1.72168,12.88013,12.88013,0,0,1,.66219,2.64874c.13244.66219.13244,1.32437.26487,2.25143,0,.79462.13244,1.32437.13244,1.72168.13244.39731.13244.92706.26487,1.58925a4.74429,4.74429,0,0,0,.52975,1.45681,9.878,9.878,0,0,0,.92706,1.58925c.39731.66219.92706,1.32437,1.45681,2.119a13.2808,13.2808,0,0,1,2.64874,4.238,11.12618,11.12618,0,0,1,1.0595,4.88693,9.00059,9.00059,0,0,1-.39731,2.662.58037.58037,0,0,1,.52975.29136,3.71558,3.71558,0,0,1,.39731,1.20518l.13244.98a1.55818,1.55818,0,0,0,.66219.80787,2.94388,2.94388,0,0,0,.92706.596,4.29943,4.29943,0,0,1,.92706.55624,1.17765,1.17765,0,0,1,.39731.83435,1.28863,1.28863,0,0,1-.39731,1.01977,2.07472,2.07472,0,0,1-.92706.56948c-.26487.13244-.79462.39731-1.58925.77078a14.41914,14.41914,0,0,0-1.98656,1.43032l-1.32437,1.127a7.33822,7.33822,0,0,1-1.45681,1.11247A2.89677,2.89677,0,0,1,31.8575,44l-.92706-.10595a3.0224,3.0224,0,0,1-2.119-1.61573,45.23558,45.23558,0,0,0-4.90018-.38407"
 }));
 
 exports.linux_logo = linux_logo;
 
-var menu = _react["default"].createElement("svg", {
+var menu = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"
 }));
 
 exports.menu = menu;
 
-var mode_edit = _react["default"].createElement("svg", {
+var mode_edit = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 34.5V42h7.5l22.13-22.13-7.5-7.5L6 34.5zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z"
 }));
 
 exports.mode_edit = mode_edit;
 
-var more_horiz = _react["default"].createElement("svg", {
+var more_horiz = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M12 20c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm24 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-12 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
 }));
 
 exports.more_horiz = more_horiz;
 
-var more_vert = _react["default"].createElement("svg", {
+var more_vert = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
 }));
 
 exports.more_vert = more_vert;
 
-var notifications = _react["default"].createElement("svg", {
+var notifications = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 44c2.21 0 4-1.79 4-4h-8c0 2.21 1.79 4 4 4zm12-12V22c0-6.15-3.27-11.28-9-12.64V8c0-1.66-1.34-3-3-3s-3 1.34-3 3v1.36c-5.73 1.36-9 6.49-9 12.64v10l-4 4v2h32v-2l-4-4z"
 }));
 
 exports.notifications = notifications;
 
-var open_in_new = _react["default"].createElement("svg", {
+var open_in_new = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38 38H10V10h14V6H10c-2.21 0-4 1.79-4 4v28c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V24h-4v14zM28 6v4h7.17L15.51 29.66l2.83 2.83L38 12.83V20h4V6H28z"
 }));
 
 exports.open_in_new = open_in_new;
 
-var pause = _react["default"].createElement("svg", {
+var pause = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M12 38h8V10h-8v28zm16-28v28h8V10h-8z"
 }));
 
 exports.pause = pause;
 
-var person = _react["default"].createElement("svg", {
+var person = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 24c4.42 0 8-3.59 8-8 0-4.42-3.58-8-8-8s-8 3.58-8 8c0 4.41 3.58 8 8 8zm0 4c-5.33 0-16 2.67-16 8v4h32v-4c0-5.33-10.67-8-16-8z"
 }));
 
 exports.person = person;
 
-var pivotal_p = _react["default"].createElement("svg", {
+var pivotal_p = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M21.2865,4l-10.96091.00231V44h6.80363V10.03923H20.531c.79551.00679,1.538.033,2.2094.04729,5.564.10808,8.33445,1.80535,8.33445,6.12006,0,.1743.01.28654.01.46747,0,3.98945-2.19706,6.63694-8.25111,6.63694a12.96267,12.96267,0,0,1-1.45232-.12557v5.53228s.865-.00722,1.45742-.00722c8.69419,0,14.83549-3.41059,14.83549-11.9753,0-.17184-.01182-.34759-.01182-.517C37.66259,7.34105,30.98091,4,21.2865,4Z"
 }));
 
 exports.pivotal_p = pivotal_p;
 
-var pivotal_pws = _react["default"].createElement("svg", {
+var pivotal_pws = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   style: {
     'fillRule': 'evenodd'
   },
@@ -13484,15 +13479,15 @@ var pivotal_pws = _react["default"].createElement("svg", {
 
 exports.pivotal_pws = pivotal_pws;
 
-var pivotal_ui = _react["default"].createElement("svg", {
+var pivotal_ui = _react.default.createElement("svg", {
   viewBox: "0 0 150 173.21",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("title", null, "Pivotal UI A"), _react["default"].createElement("polygon", {
+}, _react.default.createElement("title", null, "Pivotal UI A"), _react.default.createElement("polygon", {
   style: {
     'fill': '#00776d'
   },
   points: "0 129.9 75 173.21 90 164.54 90 8.66 75 0 60 8.66 60 129.9 30 112.58 30 25.98 0 43.3 0 129.9"
-}), _react["default"].createElement("polygon", {
+}), _react.default.createElement("polygon", {
   style: {
     'fill': '#00776d'
   },
@@ -13501,10 +13496,10 @@ var pivotal_ui = _react["default"].createElement("svg", {
 
 exports.pivotal_ui = pivotal_ui;
 
-var pivotal_ui_inverted = _react["default"].createElement("svg", {
+var pivotal_ui_inverted = _react.default.createElement("svg", {
   viewBox: "0 0 210 242.49",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("title", null, "Pivotal UI B"), _react["default"].createElement("path", {
+}, _react.default.createElement("title", null, "Pivotal UI B"), _react.default.createElement("path", {
   style: {
     'fill': '#00776d'
   },
@@ -13513,15 +13508,15 @@ var pivotal_ui_inverted = _react["default"].createElement("svg", {
 
 exports.pivotal_ui_inverted = pivotal_ui_inverted;
 
-var pivotal_ui_white = _react["default"].createElement("svg", {
+var pivotal_ui_white = _react.default.createElement("svg", {
   viewBox: "0 0 150 173.21",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("title", null, "Pivotal UI A"), _react["default"].createElement("polygon", {
+}, _react.default.createElement("title", null, "Pivotal UI A"), _react.default.createElement("polygon", {
   style: {
     'fill': '#ffffff'
   },
   points: "0 129.9 75 173.21 90 164.54 90 8.66 75 0 60 8.66 60 129.9 30 112.58 30 25.98 0 43.3 0 129.9"
-}), _react["default"].createElement("polygon", {
+}), _react.default.createElement("polygon", {
   style: {
     'fill': '#ffffff'
   },
@@ -13530,46 +13525,46 @@ var pivotal_ui_white = _react["default"].createElement("svg", {
 
 exports.pivotal_ui_white = pivotal_ui_white;
 
-var play_arrow = _react["default"].createElement("svg", {
+var play_arrow = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M16 10v28l22-14z"
 }));
 
 exports.play_arrow = play_arrow;
 
-var plug = _react["default"].createElement("svg", {
+var plug = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("title", null, "plug-alt"), _react["default"].createElement("path", {
+}, _react.default.createElement("title", null, "plug-alt"), _react.default.createElement("path", {
   d: "M38.7,22.3l-1.5-1.5,4.5-4.5a1.9799,1.9799,0,0,0-2.8-2.8L34.4,18l-4.2-4.2,4.5-4.5a1.9799,1.9799,0,1,0-2.8-2.8L27.4,11,25.9,9.5a1.872,1.872,0,0,0-2.6,0L18.8,14h0a10.79388,10.79388,0,0,0-1.7,13L7.7,36l4.2,4.2L21,31.1a11.05409,11.05409,0,0,0,13-1.7h0l4.5-4.5A1.72157,1.72157,0,0,0,38.7,22.3Z"
 }));
 
 exports.plug = plug;
 
-var print = _react["default"].createElement("svg", {
+var print = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M0 0h24v24H0z",
   fill: "none"
 }));
 
 exports.print = print;
 
-var react = _react["default"].createElement("svg", {
+var react = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M44,24.00409c0-2.64984-3.31836-5.16107-8.406-6.71832,1.17407-5.18549.65222-9.311-1.647-10.6319a3.54938,3.54938,0,0,0-1.81818-.46472c-2.24219,0-5.17737,1.598-8.14514,4.37018-2.96777-2.75586-5.903-4.32941-8.14514-4.32941a3.63562,3.63562,0,0,0-1.84265.45654c-2.29108,1.32086-2.80469,5.43829-1.6225,10.60742C7.30206,18.85931,4,21.36243,4,24.00409c0,2.64978,3.31836,5.161,8.406,6.71826-1.17407,5.18549-.65222,9.311,1.647,10.6319a3.58441,3.58441,0,0,0,1.83453.4566c2.24213,0,5.17731-1.59808,8.14508-4.37018,2.96783,2.7558,5.903,4.33752,8.14514,4.33752a3.63546,3.63546,0,0,0,1.84265-.45654c2.29108-1.32086,2.80475-5.43829,1.6225-10.60742C40.69794,29.15692,44,26.64575,44,24.00409ZM32.12885,8.00732a1.85485,1.85485,0,0,1,.92133.22015c1.10883.63593,1.58984,3.05743,1.21478,6.172-.08966.76642-.23639,1.57361-.41577,2.39709a39.51288,39.51288,0,0,0-5.17737-.88873,39.76172,39.76172,0,0,0-3.39172-4.0766C27.938,9.36078,30.43292,8.00732,32.12885,8.00732ZM16.77618,28.17853q.57477.97842,1.17407,1.9079c-1.15778-.1712-2.27478-.38324-3.34283-.6441.30164-1.05182.6767-2.13617,1.10071-3.22058C16.04242,26.874,16.393,27.52631,16.77618,28.17853ZM14.58295,18.5658c1.06812-.25275,2.19324-.47284,3.35919-.6441-.39954.62781-.79907,1.27191-1.17407,1.93237-.37506.65222-.72565,1.3045-1.05994,1.95679C15.26782,20.71826,14.89276,19.62573,14.58295,18.5658ZM16.662,24.0285c.50549-1.09253,1.07623-2.18506,1.68774-3.25311.63593-1.10071,1.28821-2.14435,1.9649-3.11456,1.21484-.106,2.446-.16309,3.6853-.16309,1.23114,0,2.46228.05707,3.66895.15491q1.01514,1.45541,1.97314,3.09827c.61963,1.06805,1.18219,2.15247,1.69586,3.245-.51367,1.09253-1.07623,2.18506-1.68774,3.25317-.63593,1.10065-1.28821,2.14429-1.9649,3.11456-1.21484.106-2.446.163-3.6853.163-1.23114,0-2.46228-.05707-3.669-.15491q-1.015-1.45532-1.97308-3.09821Q17.42847,25.67139,16.662,24.0285Zm14.56177,4.12555c.37506-.65222.72565-1.31262,1.05994-1.9649.44025,1.09253.81531,2.18506,1.12512,3.245-1.06805.26093-2.19324.481-3.35913.65228C30.44922,29.45862,30.84875,28.81451,31.22382,28.15405Zm-.00818-8.32446c-.37506-.65228-.77454-1.28821-1.17407-1.9079,1.15778.17126,2.27478.38324,3.34283.6441-.30164,1.05182-.6767,2.13617-1.10065,3.22058C31.94946,21.13409,31.59888,20.48187,31.21564,19.82959Zm-4.97351-4.10114c-.73376-.03259-1.48389-.05707-2.24213-.05707-.76642,0-1.52466.0163-2.2666.05707a31.828,31.828,0,0,1,2.24213-2.609A33.6096,33.6096,0,0,1,26.24213,15.72845ZM14.90094,8.26007a1.8139,1.8139,0,0,1,.93762-.22015c1.68774,0,4.1908,1.34534,6.84875,3.79944A38.51075,38.51075,0,0,0,19.32,15.90784a38.08021,38.08021,0,0,0-5.18549.89685c-.1875-.81531-.32611-1.60614-.424-2.36444C13.32733,11.32568,13.80023,8.90417,14.90094,8.26007ZM12.84631,28.96124c-.80719-.25275-1.57361-.53-2.2829-.8316C7.67712,26.8985,5.81,25.28412,5.81,24.00409s1.86713-2.90259,4.75342-4.12561c.70117-.30164,1.46759-.57068,2.25842-.82349a39.15725,39.15725,0,0,0,1.83447,4.96539A38.6135,38.6135,0,0,0,12.84631,28.96124Zm3.02484,11.03955a1.9455,1.9455,0,0,1-.92133-.22015c-1.10883-.63593-1.58984-3.05743-1.21484-6.172.08972-.76642.23645-1.57361.41583-2.39709a39.51288,39.51288,0,0,0,5.17737.88873,39.76926,39.76926,0,0,0,3.39172,4.07666C20.062,38.64734,17.56708,40.00079,15.87115,40.00079Zm8.14514-5.11212a33.62265,33.62265,0,0,1-2.2666-2.609c.73376.03259,1.48389.05707,2.24213.05707.76642,0,1.52472-.0163,2.26666-.05707A31.82831,31.82831,0,0,1,24.0163,34.88867ZM33.09906,39.748a1.8141,1.8141,0,0,1-.93762.212c-1.68774,0-4.1908-1.34528-6.84875-3.79944A38.50455,38.50455,0,0,0,28.68,32.0921a38.06915,38.06915,0,0,0,5.18549-.89685,22.82563,22.82563,0,0,1,.424,2.37262C34.67267,36.68243,34.19977,39.10394,33.09906,39.748Zm4.32941-11.61841c-.70117.30164-1.46759.57074-2.25848.82349a39.15725,39.15725,0,0,0-1.83447-4.96539,38.595,38.595,0,0,0,1.81-4.94086c.80719.25275,1.57361.53,2.29108.8316,2.88629,1.23114,4.75336,2.84552,4.75336,4.12561C42.18182,25.28412,40.3147,26.90662,37.42847,28.12964Z"
-}), _react["default"].createElement("circle", {
+}), _react.default.createElement("circle", {
   cx: "23.99184",
   cy: "24.00408",
   r: "3.72605"
@@ -13577,145 +13572,145 @@ var react = _react["default"].createElement("svg", {
 
 exports.react = react;
 
-var refresh = _react["default"].createElement("svg", {
+var refresh = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M35.3 12.7C32.41 9.8 28.42 8 24 8 15.16 8 8.02 15.16 8.02 24S15.16 40 24 40c7.45 0 13.69-5.1 15.46-12H35.3c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55L26 22h14V8l-4.7 4.7z"
 }));
 
 exports.refresh = refresh;
 
-var remove = _react["default"].createElement("svg", {
+var remove = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38 26H10v-4h28v4z"
 }));
 
 exports.remove = remove;
 
-var remove_circle = _react["default"].createElement("svg", {
+var remove_circle = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22H14v-4h20v4z"
 }));
 
 exports.remove_circle = remove_circle;
 
-var remove_circle_outline = _react["default"].createElement("svg", {
+var remove_circle_outline = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M14 22v4h20v-4H14zM24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"
 }));
 
 exports.remove_circle_outline = remove_circle_outline;
 
-var report = _react["default"].createElement("svg", {
+var report = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "2 2 44 44",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M31.46 6H16.54L6 16.54v14.91L16.54 42h14.91L42 31.46V16.54L31.46 6zM24 34.6c-1.43 0-2.6-1.16-2.6-2.6 0-1.43 1.17-2.6 2.6-2.6 1.43 0 2.6 1.16 2.6 2.6 0 1.44-1.17 2.6-2.6 2.6zm2-8.6h-4V14h4v12z"
 }));
 
 exports.report = report;
 
-var rocket = _react["default"].createElement("svg", {
+var rocket = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M23.58824,30.06886,34.90208,18.755,39,9l-9.755,4.098L17.93121,24.41183l-6.36375.70706L6.61772,30.06864l5.65681-.00013,0,0v1.41421l-.70724.70724,2.12141,2.12141,2.12141,2.12141.70724-.70724h1.41421l0,0-.00013,5.65681,4.94975-4.94975Zm2.82856-8.48541a2,2,0,1,1,2.82843,0A2,2,0,0,1,26.41679,21.58345Z"
 }));
 
 exports.rocket = rocket;
 
-var search = _react["default"].createElement("svg", {
+var search = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M31 28h-1.59l-.55-.55C30.82 25.18 32 22.23 32 19c0-7.18-5.82-13-13-13S6 11.82 6 19s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V31l10 9.98L40.98 38 31 28zm-12 0c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"
 }));
 
 exports.search = search;
 
-var select_chevrons = _react["default"].createElement("svg", {
+var select_chevrons = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M24,5,12,17l2.83,2.83L24,10.66l9.17,9.17L36,17Z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M33.17,28.17,24,37.34l-9.17-9.17L12,31,24,43,36,31Z"
 }));
 
 exports.select_chevrons = select_chevrons;
 
-var settings = _react["default"].createElement("svg", {
+var settings = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M38.86 25.95c.08-.64.14-1.29.14-1.95s-.06-1.31-.14-1.95l4.23-3.31c.38-.3.49-.84.24-1.28l-4-6.93c-.25-.43-.77-.61-1.22-.43l-4.98 2.01c-1.03-.79-2.16-1.46-3.38-1.97L29 4.84c-.09-.47-.5-.84-1-.84h-8c-.5 0-.91.37-.99.84l-.75 5.3c-1.22.51-2.35 1.17-3.38 1.97L9.9 10.1c-.45-.17-.97 0-1.22.43l-4 6.93c-.25.43-.14.97.24 1.28l4.22 3.31C9.06 22.69 9 23.34 9 24s.06 1.31.14 1.95l-4.22 3.31c-.38.3-.49.84-.24 1.28l4 6.93c.25.43.77.61 1.22.43l4.98-2.01c1.03.79 2.16 1.46 3.38 1.97l.75 5.3c.08.47.49.84.99.84h8c.5 0 .91-.37.99-.84l.75-5.3c1.22-.51 2.35-1.17 3.38-1.97l4.98 2.01c.45.17.97 0 1.22-.43l4-6.93c.25-.43.14-.97-.24-1.28l-4.22-3.31zM24 31c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
 }));
 
 exports.settings = settings;
 
-var sliders = _react["default"].createElement("svg", {
+var sliders = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 34v4h12v-4H6zm0-24v4h20v-4H6zm20 32v-4h16v-4H26v-4h-4v12h4zM14 18v4H6v4h8v4h4V18h-4zm28 8v-4H22v4h20zm-12-8h4v-4h8v-4h-8V6h-4v12z"
 }));
 
 exports.sliders = sliders;
 
-var smartphone = _react["default"].createElement("svg", {
+var smartphone = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M34 2.02L14 2c-2.21 0-4 1.79-4 4v36c0 2.21 1.79 4 4 4h20c2.21 0 4-1.79 4-4V6c0-2.21-1.79-3.98-4-3.98zM34 38H14V10h20v28z"
 }));
 
 exports.smartphone = smartphone;
 
-var sort = _react["default"].createElement("svg", {
+var sort = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 36h12v-4H6v4zm0-24v4h36v-4H6zm0 14h24v-4H6v4z"
 }));
 
 exports.sort = sort;
 
-var spinner_lg = _react["default"].createElement("svg", {
+var spinner_lg = _react.default.createElement("svg", {
   className: "spinner-lg",
   height: "100px",
   width: "100px",
   viewBox: "0 0 101 101",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("circle", {
+}, _react.default.createElement("circle", {
   className: "ring",
   cx: "50%",
   cy: "50%",
@@ -13723,7 +13718,7 @@ var spinner_lg = _react["default"].createElement("svg", {
   r: "45%",
   strokeLinecap: "butt",
   strokeWidth: "10%"
-}), _react["default"].createElement("circle", {
+}), _react.default.createElement("circle", {
   className: "path",
   cx: "50%",
   cy: "50%",
@@ -13735,13 +13730,13 @@ var spinner_lg = _react["default"].createElement("svg", {
 
 exports.spinner_lg = spinner_lg;
 
-var spinner_md = _react["default"].createElement("svg", {
+var spinner_md = _react.default.createElement("svg", {
   className: "spinner-md",
   height: "100px",
   width: "100px",
   viewBox: "0 0 101 101",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("circle", {
+}, _react.default.createElement("circle", {
   className: "ring",
   cx: "50%",
   cy: "50%",
@@ -13749,7 +13744,7 @@ var spinner_md = _react["default"].createElement("svg", {
   r: "45%",
   strokeLinecap: "butt",
   strokeWidth: "10%"
-}), _react["default"].createElement("circle", {
+}), _react.default.createElement("circle", {
   className: "path",
   cx: "50%",
   cy: "50%",
@@ -13761,13 +13756,13 @@ var spinner_md = _react["default"].createElement("svg", {
 
 exports.spinner_md = spinner_md;
 
-var spinner_sm = _react["default"].createElement("svg", {
+var spinner_sm = _react.default.createElement("svg", {
   className: "spinner-sm",
   height: "100px",
   width: "100px",
   viewBox: "0 0 101 101",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("circle", {
+}, _react.default.createElement("circle", {
   className: "ring",
   cx: "50%",
   cy: "50%",
@@ -13775,7 +13770,7 @@ var spinner_sm = _react["default"].createElement("svg", {
   r: "45%",
   strokeLinecap: "butt",
   strokeWidth: "10%"
-}), _react["default"].createElement("circle", {
+}), _react.default.createElement("circle", {
   className: "path",
   cx: "50%",
   cy: "50%",
@@ -13787,123 +13782,123 @@ var spinner_sm = _react["default"].createElement("svg", {
 
 exports.spinner_sm = spinner_sm;
 
-var stop = _react["default"].createElement("svg", {
+var stop = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M12 12h24v24H12z"
 }));
 
 exports.stop = stop;
 
-var terminal = _react["default"].createElement("svg", {
+var terminal = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M8,22.00781v-3.418l14.45117,5.6875v3.22656L8,33.17773v-3.4043L18.86914,25.9043Z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M40,37.26563V40H23.14209V37.26563Z"
 }));
 
 exports.terminal = terminal;
 
-var trash = _react["default"].createElement("svg", {
+var trash = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-}), _react["default"].createElement("path", {
+}), _react.default.createElement("path", {
   d: "M0 0h24v24H0z",
   fill: "none"
 }));
 
 exports.trash = trash;
 
-var upload = _react["default"].createElement("svg", {
+var upload = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M9 16H15V10H19L12 3L5 10H9V16ZM5 18H19V20H5V18Z"
 }));
 
 exports.upload = upload;
 
-var vertical_align_bottom = _react["default"].createElement("svg", {
+var vertical_align_bottom = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M32 26h-6V6h-4v20h-6l8 8 8-8zM8 38v4h32v-4H8z"
 }));
 
 exports.vertical_align_bottom = vertical_align_bottom;
 
-var vertical_align_center = _react["default"].createElement("svg", {
+var vertical_align_center = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M16 38h6v8h4v-8h6l-8-8-8 8zm16-28h-6V2h-4v8h-6l8 8 8-8zM8 22v4h32v-4H8z"
 }));
 
 exports.vertical_align_center = vertical_align_center;
 
-var vertical_align_top = _react["default"].createElement("svg", {
+var vertical_align_top = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M16 22h6v20h4V22h6l-8-8-8 8zM8 6v4h32V6H8z"
 }));
 
 exports.vertical_align_top = vertical_align_top;
 
-var warning = _react["default"].createElement("svg", {
+var warning = _react.default.createElement("svg", {
   height: "48",
   width: "48",
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M2 42h44L24 4 2 42zm24-6h-4v-4h4v4zm0-8h-4v-8h4v8z"
 }));
 
 exports.warning = warning;
 
-var windows_logo = _react["default"].createElement("svg", {
+var windows_logo = _react.default.createElement("svg", {
   viewBox: "0 0 48 48",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M4.06163,9.66334,20.358,7.44394l.00712,15.71916-16.2886.09276Zm16.2886,15.31092.01265,15.73286L4.07427,38.46768,4.07336,24.86873ZM22.32573,7.1536,43.93335,4V22.96318l-21.60763.17154Zm21.61265,17.9686L43.9333,44,22.32568,40.95033,22.2954,25.08687Z"
 }));
 
 exports.windows_logo = windows_logo;
 
-var zoom_in = _react["default"].createElement("svg", {
+var zoom_in = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"
 }));
 
 exports.zoom_in = zoom_in;
 
-var zoom_out = _react["default"].createElement("svg", {
+var zoom_out = _react.default.createElement("svg", {
   height: "24",
   width: "24",
   viewBox: "0 0 24 24",
   xmlns: "http://www.w3.org/2000/svg"
-}, _react["default"].createElement("path", {
+}, _react.default.createElement("path", {
   d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z"
 }));
 
@@ -13973,7 +13968,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 
 var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -14005,31 +14000,31 @@ function (_React$Component) {
         innerRef = _this$props.innerRef,
         props = _objectWithoutPropertiesLoose(_this$props, ["size", "icon", "innerRef"]);
 
-    var input = _react["default"].createElement("input", _extends({}, props, {
+    var input = _react.default.createElement("input", _extends({}, props, {
       ref: innerRef,
-      className: (0, _classnames["default"])(props.className, {
+      className: (0, _classnames.default)(props.className, {
         'input-sm': ['sm', 'small'].indexOf(size) !== -1,
         'input-lg': ['lg', 'large'].indexOf(size) !== -1
       })
     }));
 
     if (!icon) return input;
-    return _react["default"].createElement("div", {
+    return _react.default.createElement("div", {
       className: "input-icon-container"
-    }, input, _react["default"].createElement(_iconography.Icon, {
+    }, input, _react.default.createElement(_iconography.Icon, {
       src: icon
     }));
   };
 
   return Input;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.Input = Input;
 
 _defineProperty(Input, "propTypes", {
-  size: _propTypes["default"].string,
-  icon: _propTypes["default"].string,
-  innerRef: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].object])
+  size: _propTypes.default.string,
+  icon: _propTypes.default.string,
+  innerRef: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.object])
 });
 
 /***/ }),
@@ -14073,27 +14068,27 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 
 var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var ThemeContext = _react["default"].createContext('light');
+var ThemeContext = _react.default.createContext('light');
 
 var ThemeProvider = function ThemeProvider(_ref) {
   var _ref$theme = _ref.theme,
       theme = _ref$theme === void 0 ? 'light' : _ref$theme,
       props = _objectWithoutPropertiesLoose(_ref, ["theme"]);
 
-  return _react["default"].createElement(ThemeContext.Provider, _extends({}, props, {
+  return _react.default.createElement(ThemeContext.Provider, _extends({}, props, {
     value: theme
   }));
 };
 
 exports.ThemeProvider = ThemeProvider;
 ThemeProvider.propTypes = {
-  theme: _propTypes["default"].oneOf(['light', 'dark'])
+  theme: _propTypes.default.oneOf(['light', 'dark'])
 };
 var ThemeConsumer = ThemeContext.Consumer;
 exports.ThemeConsumer = ThemeConsumer;
@@ -14141,7 +14136,7 @@ var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ ".
 
 var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -14177,23 +14172,23 @@ function (_React$PureComponent) {
         children = _this$props.children,
         others = _objectWithoutPropertiesLoose(_this$props, ["isSticky", "visible", "size", "className", "children"]);
 
-    var newClasses = (0, _classnames["default"])('tooltip-container', visible ? 'tooltip-container-visible' : 'tooltip-container-hidden', size === 'auto' ? null : "tooltip-" + size, isSticky ? 'tooltip-hoverable' : null, className);
-    return _react["default"].createElement("div", _extends({
+    var newClasses = (0, _classnames.default)('tooltip-container', visible ? 'tooltip-container-visible' : 'tooltip-container-hidden', size === 'auto' ? null : "tooltip-" + size, isSticky ? 'tooltip-hoverable' : null, className);
+    return _react.default.createElement("div", _extends({
       className: newClasses
-    }, others), _react["default"].createElement("div", {
+    }, others), _react.default.createElement("div", {
       className: "tooltip-content"
     }, children));
   };
 
   return Tooltip;
-}(_react["default"].PureComponent);
+}(_react.default.PureComponent);
 
 exports.Tooltip = Tooltip;
 
 _defineProperty(Tooltip, "propTypes", {
-  visible: _propTypes["default"].bool,
-  size: _propTypes["default"].oneOf(['auto', 'sm', 'md', 'lg']),
-  isSticky: _propTypes["default"].bool
+  visible: _propTypes.default.bool,
+  size: _propTypes.default.oneOf(['auto', 'sm', 'md', 'lg']),
+  isSticky: _propTypes.default.bool
 });
 
 _defineProperty(Tooltip, "defaultProps", {
@@ -14214,7 +14209,7 @@ function (_React$Component) {
     _this.state = {
       visible: props.trigger === 'manual' ? props.display : false
     };
-    _this.clickHandler = _this.clickHandler.bind(_assertThisInitialized(_this));
+    _this.clickHandler = _this.clickHandler.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -14334,12 +14329,12 @@ function (_React$Component) {
         break;
     }
 
-    var newClasses = (0, _classnames["default"])('tooltip', className, placementClass, theme === 'light' ? 'tooltip-light' : null);
+    var newClasses = (0, _classnames.default)('tooltip', className, placementClass, theme === 'light' ? 'tooltip-light' : null);
     var newProps = Object.assign({
       className: newClasses,
       'tabIndex': '0'
     }, triggerHandler, others);
-    return _react["default"].createElement("div", newProps, this.props.children, _react["default"].createElement(Tooltip, {
+    return _react.default.createElement("div", newProps, this.props.children, _react.default.createElement(Tooltip, {
       isSticky: isSticky,
       size: this.props.size,
       visible: visible
@@ -14347,22 +14342,22 @@ function (_React$Component) {
   };
 
   return TooltipTrigger;
-}(_react["default"].Component);
+}(_react.default.Component);
 
 exports.TooltipTrigger = TooltipTrigger;
 
 _defineProperty(TooltipTrigger, "propTypes", {
-  display: _propTypes["default"].bool,
-  tooltip: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].object]).isRequired,
-  placement: _propTypes["default"].oneOf(['left', 'right', 'bottom', 'top']),
-  trigger: _propTypes["default"].oneOf(['manual', 'click', 'hover focus']),
-  clickHideDelay: _propTypes["default"].number,
-  onClick: _propTypes["default"].func,
-  onEntered: _propTypes["default"].func,
-  onExited: _propTypes["default"].func,
-  theme: _propTypes["default"].oneOf(['dark', 'light']),
-  size: _propTypes["default"].oneOf(['auto', 'sm', 'md', 'lg']),
-  isSticky: _propTypes["default"].bool
+  display: _propTypes.default.bool,
+  tooltip: _propTypes.default.oneOfType([_propTypes.default.node, _propTypes.default.object]).isRequired,
+  placement: _propTypes.default.oneOf(['left', 'right', 'bottom', 'top']),
+  trigger: _propTypes.default.oneOf(['manual', 'click', 'hover focus']),
+  clickHideDelay: _propTypes.default.number,
+  onClick: _propTypes.default.func,
+  onEntered: _propTypes.default.func,
+  onExited: _propTypes.default.func,
+  theme: _propTypes.default.oneOf(['dark', 'light']),
+  size: _propTypes.default.oneOf(['auto', 'sm', 'md', 'lg']),
+  isSticky: _propTypes.default.bool
 });
 
 _defineProperty(TooltipTrigger, "defaultProps", {
@@ -14380,10 +14375,10 @@ _defineProperty(TooltipTrigger, "defaultProps", {
 
 /***/ }),
 
-/***/ "./pages/register.js":
-/*!***************************!*\
-  !*** ./pages/register.js ***!
-  \***************************/
+/***/ "./pages/login.js":
+/*!************************!*\
+  !*** ./pages/login.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -14392,8 +14387,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_meta__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/meta */ "./components/meta.js");
-/* harmony import */ var _components_registration_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/registration-form */ "./components/registration-form.js");
-var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/pages/register.js";
+/* harmony import */ var _components_login_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/login-form */ "./components/login-form.js");
+var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/pages/login.js";
 
 
 
@@ -14410,7 +14405,7 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/pages/register.js";
       lineNumber: 7
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_registration_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_login_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -14422,13 +14417,13 @@ var _jsxFileName = "/home/dwi/kerja/yuso-front3/mynext/pages/register.js";
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fregister&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Fregister.js ***!
-  \*******************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Flogin.js ***!
+  \*************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fregister&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Fregister.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fregister&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Fregister.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Flogin.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=%2Fhome%2Fdwi%2Fkerja%2Fyuso-front3%2Fmynext%2Fpages%2Flogin.js!./");
 
 
 /***/ }),
@@ -14445,4 +14440,4 @@ module.exports = dll_6dc2816e14fab51b8269;
 /***/ })
 
 },[[0,"static/runtime/webpack.js","styles"]]]);
-//# sourceMappingURL=register.js.map
+//# sourceMappingURL=login.js.map
