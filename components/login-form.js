@@ -31,10 +31,6 @@ const LoginForm = (props) => {
         const errorField = {};
 
         message.forEach((element) => {
-          if (element.property == 'name') {
-            errorField['name'] = element.constraints.length;
-          }
-
           if (element.property == 'email') {
             errorField['email'] = element.constraints.isEmail;
           }
