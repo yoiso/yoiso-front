@@ -65,7 +65,7 @@ const LoginForm = (props) => {
             <Grid>
               <FlexCol />
               <FlexCol>
-                <ErrorAlert withIcon show={showAlert}>Pendaftaran gagal. Periksa lagi.</ErrorAlert>
+                <ErrorAlert withIcon show={showAlert}>Login gagal. Periksa lagi.</ErrorAlert>
 
                 {fields.email}
                 {fields.password}
